@@ -1,107 +1,216 @@
 
-
+$(window).on('beforeunload', function(){
+  $(window).scrollTop(0);
+});
 
 class Home extends React.Component {
 
     constructor(props){
+
         super(props);
         this.state={
             home: true,
-            who: false,
             ourMission: false,
+            people: false,
+            donate: false,
             issue: false,
-            money: false,
-            medals: false,
-            work: false
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
         }
 
     }
 
+
     home(){
+        window.scrollTo(0, 0);
         this.setState({
             home: true,
             ourMission: false,
-            who: false,
-            money: false,
-            medals: false,
+            people: false,
+            donate: false,
             issue: false,
-             work: false
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
         })
     }
-
-    who(){
-        this.setState({
-            home: false,
-            ourMission: false,
-            who: true,
-            money: false,
-            issue: false,
-            medals: false,
-             work: false
-        })
-    }
-
     ourMission(){
+        window.scrollTo(0, 0);
         this.setState({
             home: false,
             ourMission: true,
-            who: false,
-            money: false,
+            people: false,
+            donate: false,
             issue: false,
-            medals: false,
-             work: false
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
         })
     }
+
+    people(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: true,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
+        })
+    }
+
+
 
     donateMoney(){
         var new_url = "http://127.0.0.1:5000/Donate"
         // window.history.pushState({"html": "index.html"},"Donate - Runners 4 Readers", new_url)
-
+        window.scrollTo(0, 0);
         this.setState({
             home: false,
             ourMission: false,
-            who: false,
-            money: true,
+            people: false,
+            donate: true,
             issue: false,
-            medals: false,
-            work: false
-        })
-    }
-    donateMedals(){
-        this.setState({
-            home: false,
-            ourMission: false,
-            who: false,
-            money: false,
-            issue: false,
-            medals: true,
-            work: false
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
         })
     }
 
-    work(){
-        this.setState({
-            home: false,
-            ourMission: false,
-            who: false,
-            money: false,
-            issue: false,
-            medals: false,
-            work: true
-        })
-    }
 
     issue(){
+        window.scrollTo(0, 0);
         this.setState({
             home: false,
             ourMission: false,
-            who: false,
-            money: false,
+            people: false,
+            donate: false,
             issue: true,
-            medals: false,
-            work: false
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
         })
     }
+    approach(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: true,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
+        })
+    }
+    progress(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: true,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: false
+        })
+    }
+    story(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: true,
+            request: false,
+            volunteer: false,
+            contact: false
+        })
+    }
+
+    request(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: false,
+            request: true,
+            volunteer: false,
+            contact: false
+        })
+    }
+    volunteer(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: true,
+            contact: false
+        })
+    }
+    contact(){
+        window.scrollTo(0, 0);
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            contact: true
+        })
+    }
+
 
 
 
@@ -110,11 +219,15 @@ class Home extends React.Component {
         return(
             <div className="home">
                 <Logo   home = {this.home.bind(this)}/>
-                <Navbar who = {this.who.bind(this)}
+                <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
                         donateMoney = {this.donateMoney.bind(this)}
-                        donateMedals = {this.donateMedals.bind(this)}
-                        work = {this.work.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Hero />
                 <Mission />
@@ -124,54 +237,202 @@ class Home extends React.Component {
             </div>
         );
         }
-        if (this.state.work === true){
+        if (this.state.ourMission === true){
         return(
             <div className="home">
                 <Logo   home = {this.home.bind(this)}/>
-                <Navbar who = {this.who.bind(this)}
+                <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
                         donateMoney = {this.donateMoney.bind(this)}
-                        donateMedals = {this.donateMedals.bind(this)}
-                        work = {this.work.bind(this)}/>
-                <Work />
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <OurMission />
             </div>
         );
         }
-        if (this.state.who === true){
+        if (this.state.people === true){
         return(
             <div className="home">
                 <Logo   home = {this.home.bind(this)}/>
-                <Navbar who = {this.who.bind(this)}
+                <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
                         donateMoney = {this.donateMoney.bind(this)}
-                        donateMedals = {this.donateMedals.bind(this)}
-                        work = {this.work.bind(this)}/>
-                <About/>
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <People/>
             </div>
         );
         }
-        if (this.state.money === true){
+        if (this.state.issue === true){
         return(
             <div className="home">
                 <Logo   home = {this.home.bind(this)}/>
-                <Navbar who = {this.who.bind(this)}
+                <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
                         donateMoney = {this.donateMoney.bind(this)}
-                        donateMedals = {this.donateMedals.bind(this)}
-                        work = {this.work.bind(this)}/>
-                <DonateMoney/>
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Issue/>
             </div>
         );
         }
+        if (this.state.donate === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Donate />
+            </div>
+        );
+        }
+        if (this.state.approach === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Approach />
+            </div>
+        );
+        }
+        if (this.state.progress === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Progress/>
+            </div>
+        );
+        }
+        if (this.state.story === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Story/>
+            </div>
+        );
+        }
+        if (this.state.request === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Request/>
+            </div>
+        );
+        }
+        if (this.state.volunteer === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Volunteer />
+            </div>
+        );
+        }
+        if (this.state.contact === true){
+        return(
+            <div className="home">
+                <Logo   home = {this.home.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Contact />
+            </div>
+        );
+        }
+
+
       else{
       return(
             <div className="home">
                 <Logo home = {this.home.bind(this)}/>
-                <Navbar who = {this.who.bind(this)}
+                <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
                         donateMoney = {this.donateMoney.bind(this)}
-                        donateMedals = {this.donateMedals.bind(this)}
-                        work = {this.work.bind(this)}/>
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        issue = {this.issue.bind(this)}/>
             </div>
         );
 
@@ -189,16 +450,17 @@ class Navbar extends React.Component {
 
   render() {
         return(
-            <ul className= {"menu"}>
-                <NavElement name= "ABOUT US"  who= {this.props.who}  sub = {true} subl = {["Our People", "Our Mission", "Our Story"]} />
-                <NavElement name= "OUR WORK" work= {this.props.work}  sub = {true} subl = {["The Issue", "The Approach", "Progress"]}/>
-                <NavElement name= "GET INVOLVED" sub = {true} subl = {["Request A Medal", "Volunteer Opportunities"]}/>
-                <NavElement name= "CONTACT US" sub = {false}/>
-                <NavElement name= "DONATE" donateMoney = {this.props.donateMoney} sub = {true} subl = {["Monetary Donation", "Donate Medals"]}/>
-
-
+            <div className="menu-container">
+            <ul className= "menu">
+                <NavElement name= "OUR WORK"  approach = {this.props.approach} issue = {this.props.issue} progress = {this.props.progress} subl = {["The Issue", "The Approach", "Progress"]}/>
+                <NavElement name= "ABOUT US" ourMission= {this.props.ourMission} people= {this.props.people} story = {this.props.story} subl = {["Our People", "Our Mission", "Our Story"]} />
+                <NavElement name= "GET INVOLVED" volunteer = {this.props.volunteer} request = {this.props.request} subl = {["Request A Medal", "Volunteer Opportunities"]}/>
             </ul>
-
+                <ul className="menu2">
+                    <NavElement name= "CONTACT US" contact = {this.props.contact}/>
+                <NavElement name= "DONATE" donateMoney = {this.props.donateMoney} />
+                </ul>
+        </div>
         );
   }
 }
@@ -210,73 +472,56 @@ class NavElement extends React.Component {
     }
 
   render() {
-            if (this.props.sub === true) {
-                if (this.props.name === "GET INVOLVED") {
-                    return (
-                        <li className="navbar-element-sub">
-                            {this.props.name}
-                            <ul className="sub" id="d">
-                                <li >{this.props.subl[0]} </li>
-                                <li >{this.props.subl[1]}</li>
-                            </ul>
-                        </li>
-                    )
-                }
+            if (this.props.name === "GET INVOLVED") {
+                return (
+                    <li className="navbar-element-sub" id = "f">
+                        {this.props.name}
+                        <ul className="sub" id="c">
+                            <li onClick = {this.props.request}>{this.props.subl[0]} </li>
+                            <li onClick = {this.props.volunteer} >{this.props.subl[1]}</li>
+                        </ul>
+                    </li>
+                )
+            }
 
-                if (this.props.name === "ABOUT US") {
-                    return (
-                        <li className="navbar-element-sub">
-                            {this.props.name}
-                            <ul className="sub" id="a">
-                                <li onClick={this.props.who} >{this.props.subl[0]}</li>
-                                <li>{this.props.subl[1]}</li>
-                                <li>{this.props.subl[2]}</li>
-                            </ul>
-                        </li>
-                    )
-                }
+            if (this.props.name === "ABOUT US") {
+                return (
+                    <li className="navbar-element-sub">
+                        {this.props.name}
+                        <ul className="sub" id="b">
+                            <li onClick={this.props.people} >{this.props.subl[0]}</li>
+                            <li onClick = {this.props.ourMission} >{this.props.subl[1]}</li>
+                            <li onClick = {this.props.story} >{this.props.subl[2]}</li>
+                        </ul>
+                    </li>
+                )
+            }
 
-                if (this.props.name === "DONATE") {
-                    return (
-                        <li className="navbar-element-sub" id= "e">
-                            {this.props.name}
-                            <ul className="sub" id="c">
-                                <li onClick={this.props.donateMoney}>{this.props.subl[0]}</li>
-                                <li>{this.props.subl[1]}</li>
-                            </ul>
-                        </li>
-                    )
-                }
+            if (this.props.name === "DONATE") {
+                return (
+                    <li onClick = {this.props.donateMoney} className="navbar-element" id= "e">
+                        {this.props.name}
+                    </li>
+                )
+            }
 
-                if (this.props.name === "OUR WORK") {
-                    return (
-                        <li className="navbar-element-sub">
-                            {this.props.name}
-                            <ul className="sub" id="b">
-                                <li onClick={this.props.work}>{this.props.subl[0]}</li>
-                                <li>{this.props.subl[1]}</li>
-                                <li>{this.props.subl[2]}</li>
-                            </ul>
-                        </li>
-                    )
-                }
+            if (this.props.name === "OUR WORK") {
+                return (
+                    <li className="navbar-element-sub" >
+                        <span>{this.props.name}</span>
+                        <ul className="sub" id="a">
+                            <li onClick={this.props.issue}>{this.props.subl[0]}</li>
+                            <li onClick={this.props.approach}>{this.props.subl[1]}</li>
+                            <li onClick={this.props.progress}>{this.props.subl[2]}</li>
+                        </ul>
+                    </li>
+                )
+            }
 
             else {
-                    return (
-            <li className= "navbar-element-sub">
-                {this.props.name}
-                <ul className = "sub" >
-                    <li>{this.props.subl[0]}</li>
-                    <li>{this.props.subl[1]}</li>
-                </ul>
-            </li>
-            )
-                }
 
-            }
-            else{
             return (
-            <li className= "navbar-element">
+            <li onClick = {this.props.contact} className= "navbar-element" id = "d">
                 {this.props.name}
             </li>
             )
@@ -460,14 +705,15 @@ class Logo extends React.Component {
   render() {
         return (
             <div className= "LOGO" >
-                <img onClick={this.props.home} src = "/static/1.png" alt="logo2"/>
+                <img onClick={this.props.home} src = "/static/logo_green.png" alt="/static/logo_green.jpeg"/>
+                <h1 onClick={this.props.home}>RUNNERS 4 READERS  </h1>
             </div>
         )
 
   }
 }
 
-class DonateMoney extends React.Component{
+class Donate extends React.Component{
     constructor(props){
     super(props);
 
@@ -476,6 +722,7 @@ class DonateMoney extends React.Component{
   render() {
         return (
             <div className= "donate-money" >
+
                 <Payment/>
             </div>
         )
@@ -537,10 +784,176 @@ class Payment extends React.Component{
   }
 }
 
+class Issue extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "issue" >
+                <div className = "paralax">
+                    <h1>What fuels our mission? </h1>
+                    <div id = "underline"> </div>
+                    <div id = "info"> 45 million Americans cannot read above a fifth grade level</div>
+
+                </div>
+                <div>
+                    <h2>The numbers</h2>
+                    <div id = "underline-2"> </div>
+
+                </div>
+                <div className = "paralax-2">
+
+                    <div id="stats-a" className="js-slidein" >
+                        <span id = "span-a"> 32 million </span>  <span id = "normal"> adults cannot read – that represents </span> <span>14%</span>  <span id = "normal"> of the population</span>
+                    </div>
+                    <div id="stats-b" className="js-slidein" >
+                        <span id = "span-a">1 in 4 </span> <span id = "normal"> children grow up not knowing how to read. The average child reads less than 3 hours per week</span>
+                    </div>
+
+                    <div id="stats-d" className="js-slidein" >
+                        <span id = "span-a">85%</span><span id = "normal"> of juveniles who interact with the juvenile court system are considered functionally illiterate</span>
+                    </div>
+                    <div id="stats-e" className="js-slidein">
+                        <span id = "normal"> The United Nations ranks the United States </span><span>26th</span> <span id = "normal"> in literacy</span>
+                    </div>
+                </div>
+                <h2>Impact of illiteracy in the United States</h2>
+                    <div id = "underline-3"> </div>
+                <div className="paralax-3" id = "impact">
+                    <ul id = "impact-list">
+                    <li className="js-slidein">Welfare </li>
+                    <li className="js-slidein">Prison</li>
+                    <li className="js-slidein">Gender and Racial Inequality</li>
+                    <li className="js-slidein">Unemployment</li>
+                    </ul>
+
+                </div>
+            </div>
+        )
+
+  }
+}
+
+class Approach extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+
+    render() {
+        return (
+            <div className="approach">
+                <div className="bg-image-approach"></div>
+                <h1> Our Approach</h1>
+                <div id = "underline-approach"> </div>
+
+                <div className="approach-container">
+                    <div className= "approach-box-1">
+                        <img src = "/static/child_book_on_head_2.jpg"></img>
+                        <div className= "approach-text">
+                            <h2>Read</h2>
+                            To develop enthusiasm for and a habit of reading, parents and teachers need to model being a reader, read to their children or students, and encourage reading. Just like running, reading takes discipline and hard work. Reading’s long-term effect on a student’s life is powerful. It opens the door to success.
+                        </div>
+
+                    </div>
+                    <div className= "approach-box-2">
 
 
 
-class About extends React.Component{
+                        <div className= "approach-text">
+                            <h2>Lead</h2>
+                            Engaging reluctant readers is a challenge and in large part, depends on having positive role models. We can do our part by championing their achievement with a medal that symbolizes not only the hard work of the donor, but the hard work of the student.
+                        </div>
+                         <img src = "/static/child_book_on_head.jpg"></img>
+                    </div>
+                    <div className= "approach-box-3">
+                        <img src = "/static/child_with_medal.jpg"></img>
+                        <div className= "approach-text">
+                            <h2>Succeed</h2>
+                        Working together with school administrations, community outreach, libraries and literacy programs, our goal is to have a positive impact on a child’s success and celebrate their hard work. They WILL succeed when they can read.
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        )
+
+    }
+}
+
+class Progress extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "progress" >
+                <h1>Progress</h1>
+            </div>
+        )
+
+  }
+}
+
+class Volunteer extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "volunteer" >
+                <h1>Volunteer</h1>
+            </div>
+        )
+
+  }
+}
+
+class Request extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "request" >
+                <h1>Request</h1>
+            </div>
+        )
+
+  }
+}
+
+
+class Contact extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "contact" >
+                <h1>Contact</h1>
+            </div>
+        )
+
+  }
+}
+
+
+
+class People extends React.Component{
 
         constructor(props){
         super(props);
@@ -549,7 +962,7 @@ class About extends React.Component{
 
   render() {
         return(
-            <div className="about">
+            <div className="people">
                 <div className="hero-about">
                  </div>
 
@@ -562,66 +975,59 @@ class About extends React.Component{
                 </div>
 
                 <h1>Leadership</h1>
-    <div className="people-container">
+                <div id = "underline-4"></div>
+                <div className= "people-container">
+                    <div className= "person" id = "Tami">
 
-        <div className = "people">
-    <div className= "cpic"></div>
-         <div className="description">
+                        <div className="person-info">
+                            <img src = "/static/tami.jpeg"></img>
+                            <span>                        <h2>Tami Christan</h2>
+                        <h3>President</h3>I love reading; books are like old friends I can revisit. I love how the story unfolds and when it’s really good, I can read it over and over again. Truly a great escape, but’s also essential to everything we do. An avid runner, I’ve trained and run a handful of half marathon races; various trail runs and 5k/10k races. My favorite run was my first half marathon; I ran to raise money for clean wells in Africa for the Pokot Tribe with my church. It was a huge accomplishment to run a half marathon and I was terrified. The feeling of joy that I carry today, knowing that long after I am gone, someone will have clean water was worth all the hard work that went into training. A proud mother of two daughters; they are the first in my family to attend college.</span>
+                        </div>
+                    </div>
+                    <div className= "person" id = "Brian">
 
-     <h3>Tami Christian</h3>
-         <h5>
-     Tami is an avid runner and reader. I’ve trained and run a handful of half
-marathon races, various trail runs and 5k/10k races. Having to walk when I wanted to
-run for the Paczki Race due to an injury, was a challenge. Injuries and age have caught
-up with me. I still enjoy training and staying fit. Without a doubt, I still love crossing the
-finish line; no matter how I get there. I love reading and like my partners know it is the
-first tool we need to succeed. The fact that we have so many children falling below the
-expected literacy stage is a problem. I read books over and over again, because I love
-the story; they were like old friends I could revisit. It is a great escape, but also
-             essential to everything.</h5>
-         </div>
-        </div>
-                <div className="people">
 
-         <div className="description">
-             <div className= "cpic"></div>
-     <h3>Elizabeth Parran</h3>
+                        <div className="person-info">
+                        <img src = "/static/brian_suit.jpg"></img>
+        <span>                        <h2>Brian Crowe</h2>
+                        <h3>Vice President</h3> Brian Crowe is a single dad to an awesome 13 year old young lady.  He love's to be outdoors (hiking, kayaking, etc.) and when he cannot get out in the wild will opt to run barefoot in the grass and camp in the backyard.  He's no speed reader but definitely believes reading can open up the world, initiate a spark and stretch your imagination.  A great quick read, with a few pictures in there too, is Jonathan Livingston Seagull by Richard Bach.
+Believe in yourself and you will soar!</span>
 
-                    <h5>Elizabeth is an outdoor enthusiast that doesn’t see a challenge that can’t be
-overcome. An avid runner and hiker, I am training for my first half marathon. Besides
-loving the outdoors and trying to spend as much time as possible on trails, I also love
-to read. Some of my favorite authors are John Steinbeck, Harold Bell Wright, Augusta
-Jane Evans and many others. I tried to instill the love of reading in all three of my
-children who are now in college. I believe reading provides a good foundation to your
-future and would like to add encouragement to children who are trying to reach their
-next reading milestone. I believe rewarding children with the progress of their efforts
-                        encourages them to keep going to reach even higher goals.</h5>
-         </div>
+                        </div>
+                    </div>
+                    <div className= "person" id = "Elizabeth">
+
+
+                        <div className="person-info">
+                            <img src = "/static/elizabeth.jpeg"></img>
+
+                            <span>                     <h2>Elizabeth Parra</h2>
+                        <h3>Secretary</h3>An outdoor enthusiast that doesn’t see a challenge that can’t be overcome. An avid runner and hiker, I am training for my first half marathon. Besides loving the outdoors and trying to spend as much time as possible on trails, I also love to read. Some of my favorite authors are John Steinbeck, Harold Bell Wright, Augusta Jane Evans and many others. I tried to instill the love of reading in all three of my children who are now in college. I believe reading provides a good foundation to your future and would like to add encouragement to children who are trying to reach their next reading milestone. I believe rewarding children with the progress of their efforts encourages them to keep going to reach even higher goals. </span>
+                        </div>
+                    </div>
+                    <div className= "person" id = "Curtis">
+
+
+
+                        <div className="person-info">
+                              <img src = "/static/curtis.jpg"></img>
+                            <span>                        <h2>Curtis Leszczynski</h2>
+                        <h3>Treasurer</h3>I was born in the City of Detroit and has a love of sports, running, biking and our city. Being from the inner city, I was the first in my family to graduate from college and reading was a big part of it. I graduated from Michigan State University and saw first-hand that education was the ticket to a better career. Since then, I’ve sent my 3 sons to Michigan State and encouraged other family members to go to college. We participate in many running events, work out on a regular basis and of course, reading.  Reading for knowledge never stops.</span>
+                        </div>
+                    </div>
+
+
                 </div>
-            <div className= "people">
-                <div className= "cpic"></div>
-         <div className="description">
-     <h3>Curtis Leszczynski</h3>
-<h5>
-                Curtis was born in the City of Detroit and has a love of sports, running,
-biking and our city. Being from the inner city, I was the first in my family to graduate
-from college and reading was a big part of it. I graduated from Michigan State
-University and saw first-hand that education was a ticket to a better career. Since then,
-I've sent my 3 sons to Michigan State and encouraged other family members to go to
-college. We participate in many running events, working out on a regular basis, and of
-    course, reading. Reading for knowledge never stops.</h5>
-         </div>
-</div>
 
             </div>
-                </div>
         )
 
   }
 
 }
 
-class Work extends React.Component{
+class OurMission extends React.Component{
     constructor(props){
     super(props);
 
@@ -629,8 +1035,8 @@ class Work extends React.Component{
 
   render() {
         return (
-            <div className= "work" >
-
+            <div className= "our-mission" >
+                <h1>OUR MISSION</h1>
             </div>
         )
 

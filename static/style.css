@@ -17,7 +17,6 @@
     margin-left: 9em;
     margin-right: 9em;
     text-align: center;
-    padding-bottom: 300px;
     color: white;
     text-shadow: 0px 6px 20px #000000;
 }
@@ -25,15 +24,15 @@
     background-image: linear-gradient(
       rgba(0, 0, 0, 0.40),
       rgba(0, 0, 0, 0.0)
-    ), url('/static/reading2.jpg');
+    ), url('/static/reading2_small.jpg');
      background-size: cover;
      height: 78%;
      backface-visibility: visible;
      justify-content: center;
      justify-items: center;
+    padding-top: 3em;
      display: flex;
-     flex-direction: column;
-    margin-top: 121px;
+    margin-top: 125px;
 }
 
 .hero-about{
@@ -73,47 +72,44 @@
 
 
 
-.about{
-    margin-top: 121px;
+.people{
+    margin-top: 125px;
     display: block;
-}
-
-.about h1{
-    margin-top: 40px;
     text-align: center;
-    margin-bottom: 30px;
-
-}
-.about h3{
-    font-size:35;
-    font-weight: 300;
-    margin-left: 6.5em;
-    margin-right: 6.5em;
-    text-align: center;
-    margin-bottom:100px;
-}
-.about span {
-    font-weight: 800;
 }
 
 
 .LOGO{
+    z-index: 300;
 
-     /*color: #065135;*/
     background-color: white;
     width:100%;
-    border-bottom: 1px solid #053d28;
+    color: #065135;
+    /*border-bottom: 1px solid #053d28;*/
+     border-bottom: 1px solid #065135;
     position: fixed;
-    padding-top: 7px;
     top: 0;
-    height: 73px;
+    display: flex;
+    height: 75px;
+    padding-top: 3px;
     padding-left: 8em;
 
 }
+.LOGO h1{
+    font-family: 'Lilita One', cursive;
 
+font-size: 34;
+    letter-spacing: 0px;
+    width: 180px;
+    padding-top: 8px;
+    line-height: 0.8;
+    text-align: center;
+    cursor: pointer;
+
+}
 .LOGO img{
-    padding-top: 6px;
-    height: 56px;
+    margin-top: 1px;
+    height:63px;
     cursor: pointer;
 
 }
@@ -127,7 +123,7 @@
     font-weight: 200;
     text-align: center;
     font-size: 1.125rem;
-    line-height: 2.45;
+    line-height: 2.9;
     height: 100%;
     width: 100%;
 }
@@ -139,73 +135,75 @@
     margin-top:auto;
     margin-bottom:auto;
     font-family:"proxima-nova",sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
     font-size: 1.125rem;
-    line-height: 2.45;
+    line-height: 2.9;
     height: 100%;
     width: 100%;
 
 }
 
-/*.menu .navbar-element:hover{*/
-/*    border-color:#065135;*/
-/*    cursor: pointer;*/
-/*    opacity: 1;*/
-/*}*/
-
-.menu{
-
-    list-style-type:none ;
-    font-family:"proxima-nova",sans-serif;
-    height: 48px;
-    display: flex;
-    color: #065135;
-    background-color: white;
-    position: fixed;
-    border-top: 1px solid #066e47;
-    justify-content: space-between;
+.menu-container{
     top: 0;
     width: 100%;
-    margin-top: 73px;
-    padding-left: 8.5em;
+    margin-top: 75px;
+    padding-left: 7em;
+    padding-right: 0em;
+    z-index: 300;
+    height: 51px;
+    color: #065135;
+    font-family:"proxima-nova",sans-serif;
+    background-color: white;
+    position: fixed;
+    border-bottom: 1px solid #066e47;
+    /*border-top: 1px solid #066e47;*/
+    justify-content: space-between;
+    display: flex;
 
-    /*box-shadow: 0px 1px 13px 0px #0000007a;*/
 }
 
-.menu:hover .navbar-element:not(:hover){
-    transition: 0.3s;
+
+.menu{
+    display: flex;
+    width: 52%;
+    list-style-type:none ;
+    margin: 0;
+    padding-left: 0;
+}
+#f {
+    padding-right: 5px;
+
+}
+.menu2{
+    display: flex;
+    width: 51%;
+    list-style-type:none ;
+    margin: 0;
+    background-color: #065135;
+    color: white;
+    padding: 0;
+}
+
+.menu:hover ~ .menu2{
+    transition: 0.075s;
     opacity: .2;
+    background-color: white;
+    color: #065135;
 }
+
+
 .menu:hover .navbar-element-sub:not(:hover){
     transition: 0.3s;
     opacity: .2;
 }
 
-
 .navbar-element:hover{
-    /*border-color:white;*/
     cursor: pointer;
-    background-color: white;
-    color: #065135;
-    border-top: 5px #065135 solid;
-
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-
 }
-
 .navbar-element-sub:hover{
-    /*border-color:white;*/
     cursor: pointer;
-    background-color: white;
-        border-top: 5px #065135 solid;
-
-    color: #065135;
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
 }
-
 .sub{
     list-style-type:none ;
     display:flex;
@@ -217,34 +215,35 @@
     top:47px;
     overflow: hidden;
     height:0;
-    max-height:0;
     justify-content: space-evenly;
-    transition: height 0.4s ease-in-out;
+    transition: height 0.25s ease-in-out;
 }
 #a{
-    padding-left: 0px;
-    padding-right: 44.6em;
+    padding-left: 1em;
+    padding-right: 47.9em;
 }
 #b{
-    padding-left: 12.3em;
-    padding-right: 34.5em;
+    padding-left: 11.65em;
+    padding-right: 37.6em;
 }
 
 #c{
-    padding-left: 24em;
-    padding-right: 25em;
+    padding-left: 22.1em;
+    padding-right: 25.39em;
 }
 #d{
-    padding-left: 34em;
-    padding-right: 11em;
+    padding-right: 1.5em;
+    background-color: white;
+    color: #065135;
+
 }
 
 #e{
-    color:white;
-    background-color:#065135;
-    padding-left: 80px;
-    padding-right: 80px;
-
+    color:inherit;
+    /*width: 28%;*/
+    background-color:inherit;
+    padding-left: 60px;
+    padding-right: 150px;
 }
 
 .sub li{
@@ -254,7 +253,7 @@
     font-weight: 300;
     text-align: center;
     font-size: 16px;
-    line-height: 2.45;
+    line-height: 2.65;
     width: 100%;
 
 }
@@ -263,10 +262,8 @@
 }
 
 .navbar-element-sub:hover .sub{
-    /*border-color:white;*/
-    max-height: 200px;
-    height:48px;
-    transition: height 0.4s ease-in-out;
+    height:51px;
+    transition: height 0.25s ease-in-out;
      border-bottom: 1px solid #066e47
 
 }
@@ -296,7 +293,16 @@
     display: flex;
     background-position-y: center;
 }
-
+.bg-image-approach{
+    background-image: url(/static/classroom_crop.jpg);
+    background-size: cover;
+    height: 65%;
+    margin-top:121px;
+    /* margin-top: -55px; */
+    backface-visib6lity: visible;
+    display: flex;
+    background-position-y: center;
+}
 
 .payment{
     height:100%;
@@ -388,7 +394,7 @@ background-image: url(/static/child_reading2.jpg);
 
 .home-stats button{
     font-family:"proxima-nova",sans-serif;
-    background-color: #2D912D;
+    background-color: #086845;
     color: #fff;
     font-weight: 300;
     font-size: 1.5rem;
@@ -426,11 +432,12 @@ background-image: url(/static/child_reading2.jpg);
 font-size: 1.5rem;
     font-weight: 200;
     margin-left: 1.5em;
+    cursor: pointer;
 }
 
 .donate-banner button{
     font-family:"proxima-nova",sans-serif;
-    background-color: #2D912D;
+    background-color: #086845;
     color: #fff;
     font-weight: 300;
     font-size: 1.5rem;
@@ -472,53 +479,7 @@ font-family: "proxima-nova",sans-serif;
 
 }
 
-.people-container{
-    display:flex;
-}
-.about h1{
-    border-bottom: 1px solid;
-}
 
-.people{
-
-}
-
-.people img{
-
-}
-
-.people .description{
-
-}
-
-.people h3{
-
-}
-
-.people h5{
-
-}
-.cpic{
-    background-image: url("/static/stick.png");
-    backface-visibility: visible;
-    background-size: cover;
-    height: 100%;
-}
-.epic{
-    background-image: url("/static/elizabeth.jpeg");
-    backface-visibility: visible;
-    background-size: cover;
-        height: 100%;
-
-}
-
-.tpic{
-    background-image: url("/static/tami.jpeg");
-    backface-visibility: visible;
-    background-size: cover;
-    height: 100%;
-
-}
 
 .get-involved{
     display:block;
@@ -600,7 +561,7 @@ font-family: "proxima-nova",sans-serif;
 
 .involved-container button{
     font-family: "proxima-nova",sans-serif;
-    background-color: #086845;
+    background-color: #065135;
     color: #fff;
     font-weight: 300;
     font-size: 1rem;
@@ -617,3 +578,318 @@ font-family: "proxima-nova",sans-serif;
     border-radius: 7px;
 }
 
+.paralax h1{
+/*margin-right: 1em;*/
+/*    margin-left: 1em;*/
+    text-align: center;
+    color: #2f2f2f;
+    font-family: "proxima-nova", sans-serif;
+    padding-top: 65px;
+    font-size: 3.8rem;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+.paralax #info{
+    margin-top: 1.3em;
+    font-size: 2.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    font-weight: 200;
+    /* line-height: 1.6; */
+    text-align: center;
+}
+
+.paralax{
+    background-image:  url(/static/child2_reading.jpg);
+    background-size: cover;
+    /*overflow-x: auto;*/
+    height: 500px;
+    padding-left: 25em;
+    backface-visibility: visible;
+    z-index: -1;
+    background-attachment: fixed;
+    background-position-y: top;
+    overflow-x: hidden;
+  background-repeat: no-repeat;
+}
+
+
+.paralax-2{
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url(/static/chalkboard_2.jpg);
+    background-size: cover;
+    /* overflow-x: auto; */
+    height: 700px;
+    padding-left: 1em;
+    text-align: center;
+    padding-right: 1em;
+    backface-visibility: visible;
+    z-index: -1;
+    background-attachment: fixed;
+    background-position-y: center;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+
+#stats-a{
+    margin-top: 4em;
+}
+
+
+.issue{
+    margin-top: 125px;
+
+}
+.issue h2{
+/*margin-right: 1em;*/
+/*    margin-left: 1em;*/
+    text-align: center;
+    color: #454545;
+    font-family: "proxima-nova", sans-serif;
+    padding-top: 40px;
+    font-size: 3.8rem;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+#underline{
+    border-top: 10px solid #065135;
+    padding-top: 20;
+   margin-top: .2em !important;
+margin-left: 12em;
+    margin-right: 12em;
+}
+#underline-2{
+    border-top: 10px solid #065135;
+    padding-top: 20;
+    margin-top: .2em !important;
+    margin-left: 32.5em;
+    margin-right: 32.5em;
+    margin-bottom: 2em;
+
+}
+#underline-3{
+    border-top: 10px solid #065135;
+    padding-top: 20;
+    margin-top: .2em !important;
+    margin-left: 15em;
+    margin-right: 15em;
+    margin-bottom: 2em;
+}
+
+
+.paralax-2 div{
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+
+}
+.paralax-2 div span{
+    font-size: 2.7rem;
+    color: #e1a916;
+    vertical-align: middle;
+    font-weight: 500;
+}
+.paralax-2 div #span-a{
+
+    font-size: 3.7rem;
+    color: #e1a916;
+    font-weight: 500;
+    display: inline;
+    vertical-align: bottom;
+    line-height: 1.8;
+
+}
+
+.paralax-2  #normal{
+font-size: 1.5em;
+    color: white;
+    display: inline;
+    line-height: 4.075;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-top: 0;
+    font-weight: 200;
+}
+
+
+#impact ul{
+    list-style-type: none;
+}
+
+
+.navbar-element-sub span{
+    padding-left: 18px;
+    font-weight: 300;
+
+}
+
+.wrapper:hover #slide {
+    transition: 1s;
+    left: 0;
+}
+
+#stats h3{
+    text-align: center;
+    color: #454545;
+    font-family: "proxima-nova", sans-serif;
+    /*padding-top: 55px;*/
+    font-size: 3.7rem;
+
+    font-weight: 400;
+}
+
+.paralax-3{
+    background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url(/static/openbook.jpg);
+    background-size: cover;
+    /* overflow-x: auto; */
+    height: 500px;
+    padding-left: 1em;
+    text-align: center;
+    padding-right: 1em;
+    backface-visibility: visible;
+    z-index: -1;
+    background-attachment: fixed;
+    background-position-y: center;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+.paralax-3 li{
+    font-size: 2.7rem;
+    color: white;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.approach h1{
+/*margin-right: 1em;*/
+/*    margin-left: 1em;*/
+    text-align: center;
+    color: #454545;
+    font-family: "proxima-nova", sans-serif;
+    padding-top: 40px;
+    font-size: 3.8rem;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+#underline-approach{
+    border-top: 10px solid #065135;
+    padding-top: 20;
+    margin-top: .2em !important;
+    margin-left: 32.5em;
+    margin-right: 32.5em;
+    margin-bottom: 2em;
+
+}
+
+.approach-container{
+    display: block;
+}
+
+.approach-container .approach-box-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.approach-box h2 {
+    text-align: center;
+    color: #454545;
+    font-family: "proxima-nova", sans-serif;
+    padding-top: 20px;
+    font-size: 2.8rem;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.approach-text{
+    color: #454545;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 200;
+
+}
+
+.approach-container .approach-box-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.approach-container .approach-box-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+
+.people-container{
+display: block;
+}
+.person{
+    width: 100%;
+    padding:1em;
+}
+.person-info{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-bottom: 2em;
+
+}
+.person span {
+    /*padding-right: 5em;*/
+    border-right: 1px solid;
+    text-align: left;
+    border-top: 1px solid;
+    padding-right: 40px;
+    color: #454545;
+    padding-left: 40px;
+    font-weight: 200;
+    font-size: 1.1rem;
+    border-bottom: 1px solid;
+}
+.people-container img{
+    width: 430px;
+    height: 430px;
+    border: 1px solid;
+    justify-self: center;
+}
+
+.people-container h2{
+    width: 100%;
+    text-align: center;
+    color: #065135;
+    font-weight: 600;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: .5em;
+
+    letter-spacing: -.5;
+}
+.people-container h3{
+    width: 100%;
+    text-align: center;
+
+}
+#underline-4{
+    border-top: 10px solid #065135;
+    padding-top: 20;
+    margin-top: .2em !important;
+    margin-left: 32.5em;
+    margin-right: 32.5em;
+    margin-bottom: 2em;
+
+}
+
+
+.people h1{
+    font-size: 3.8rem;
+}
+
+
+.approach-container img{
+    width: 600px;
+    height: auto;
+}
