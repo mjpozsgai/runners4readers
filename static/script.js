@@ -26,6 +26,10 @@ class Home extends React.Component {
 
 
     home(){
+        if ($(".menu-container-visible")[0]){
+          this.showNav()
+        }
+
         window.scrollTo(0, 0);
         this.setState({
             home: true,
@@ -43,6 +47,8 @@ class Home extends React.Component {
     }
     ourMission(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: true,
@@ -60,6 +66,8 @@ class Home extends React.Component {
 
     people(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -78,6 +86,8 @@ class Home extends React.Component {
 
 
     donateMoney(){
+                this.showNav()
+
         var new_url = "http://127.0.0.1:5000/Donate"
         // window.history.pushState({"html": "index.html"},"Donate - Runners 4 Readers", new_url)
         window.scrollTo(0, 0);
@@ -99,6 +109,8 @@ class Home extends React.Component {
 
     issue(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -115,6 +127,8 @@ class Home extends React.Component {
     }
     approach(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -131,6 +145,8 @@ class Home extends React.Component {
     }
     progress(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -147,6 +163,8 @@ class Home extends React.Component {
     }
     story(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -163,6 +181,8 @@ class Home extends React.Component {
 
     request(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -179,6 +199,8 @@ class Home extends React.Component {
     }
     volunteer(){
         window.scrollTo(0, 0);
+                this.showNav()
+
         this.setState({
             home: false,
             ourMission: false,
@@ -195,6 +217,7 @@ class Home extends React.Component {
     }
     contact(){
         window.scrollTo(0, 0);
+        this.showNav()
         this.setState({
             home: false,
             ourMission: false,
@@ -215,12 +238,13 @@ class Home extends React.Component {
         if ($(".menu-container-visible")[0]){
             $('.menu-container').removeClass('menu-container-visible');
 
+
         }
         else{
+             console.log("SHOW NAV")
             $('.menu-container').addClass('menu-container-visible');
 
         }
-        // nav.style.display="flex";
     }
 
     hideNav(){
@@ -234,7 +258,7 @@ class Home extends React.Component {
             <div className="home">
 
                 <Logo   home = {this.home.bind(this)}
-                show={this.showNav.bind(this)} />
+                show={this.showNav.bind(this)} hide={this.hideNav.bind(this)}/>
 
                 <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
@@ -255,7 +279,7 @@ class Home extends React.Component {
                 />
                 <HomeStats donateMoney = {this.donateMoney.bind(this)}
                             issue = {this.issue.bind(this)}/>
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
             </div>
         );
         }
@@ -276,7 +300,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <OurMission donateMoney = {this.donateMoney.bind(this)} />
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -298,7 +322,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <People donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -320,7 +344,6 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Issue/>
-                <Footer></Footer>
 
             </div>
         );
@@ -342,7 +365,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Donate />
-                  <Footer></Footer>
+                  <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -350,7 +373,8 @@ class Home extends React.Component {
         if (this.state.approach === true){
         return(
             <div className="home">
-                <Logo   home = {this.home.bind(this)}/>
+                <Logo   home = {this.home.bind(this)}
+                show={this.showNav.bind(this)} hide={this.hideNav.bind(this)}/>
 
                 <Navbar people = {this.people.bind(this)}
                         ourMission = {this.ourMission.bind(this)}
@@ -364,7 +388,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
             <Approach donateMoney = {this.donateMoney.bind(this)} />
-            <Footer></Footer>
+            <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -386,7 +410,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Progress donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -408,7 +432,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Story donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -430,7 +454,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Request donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -452,7 +476,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Volunteer />
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -474,7 +498,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Contact />
-                <Footer></Footer>
+                <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -497,7 +521,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         show={this.showNav.bind(this)}
                         issue = {this.issue.bind(this)}/>
-                        <Footer></Footer>
+                        <Footer contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -508,31 +532,22 @@ class Home extends React.Component {
   }
 }
 
-
-
-
-
-
-
 class Navbar extends React.Component {
     constructor(props){
         super(props);
     }
 
-
-
-
   render() {
         return(
             <div className="menu-container">
             <ul className= "menu">
-                <span id = "arrow" onClick={this.props.show}> > </span>
-                <NavElement name= "OUR WORK"  approach = {this.props.approach} issue = {this.props.issue} progress = {this.props.progress} subl = {["The Issue", "The Approach", "Progress"]}/>
-                <NavElement name= "ABOUT US" ourMission= {this.props.ourMission} people= {this.props.people} story = {this.props.story} subl = {["Our People", "Our Mission", "Our Story"]} />
-                <NavElement name= "GET INVOLVED" volunteer = {this.props.volunteer} request = {this.props.request} subl = {["Request A Medal", "Volunteer Opportunities"]}/>
+                {/*<span id = "arrow" onClick={this.props.show}> > </span>*/}
+                <NavElement name= "OUR WORK"   approach = {this.props.approach} issue = {this.props.issue} progress = {this.props.progress} subl = {["The Issue", "The Approach", "Progress"]}/>
+                <NavElement name= "ABOUT US"  ourMission= {this.props.ourMission} people= {this.props.people} story = {this.props.story} subl = {["Our People", "Our Mission", "Our Story"]} />
+                <NavElement name= "GET INVOLVED"  volunteer = {this.props.volunteer} request = {this.props.request} subl = {["Request A Medal", "Volunteer Opportunities"]}/>
             </ul>
                 <ul className="menu2">
-                    <NavElement name= "CONTACT US" contact = {this.props.contact}/>
+                    <NavElement name= "CONTACT US"   contact = {this.props.contact}/>
                 <NavElement name= "DONATE" donateMoney = {this.props.donateMoney} />
                 </ul>
         </div>
@@ -545,11 +560,64 @@ class NavElement extends React.Component {
         super(props);
 
     }
+    //
+    //     showAp = () => {
+    //         var plus = document.getElementById("plus-a")
+    //
+    //         if (plus.innerHTML === "+") {
+    //             plus.innerHTML = "-";
+    //             var a = document.getElementById("a")
+    //             a.style.display = "block"
+    //         } else {
+    //             plus.innerHTML = "+";
+    //             var a = document.getElementById("a")
+    //             a.style.display = "none"
+    //         }
+    //     }
+    //
+    //
+    //
+    // showBp = () => {
+    //     var plus = document.getElementById("plus-b")
+    //
+    //     console.log(plus)
+    //     if (plus.innerHTML === "+"){
+    //         plus.innerHTML = "-";
+    //         var b = document.getElementById("b")
+    //         b.style.display = "block"
+    //     }
+    //     else{
+    //         plus.innerHTML = "+";
+    //         var b = document.getElementById("b")
+    //         b.style.display = "none"
+    //     }
+    // }
+    //
+    // showCp = () => {
+    //     var plus = document.getElementById("plus-c")
+    //
+    //     if (plus.innerHTML === "+"){
+    //         plus.innerHTML = "-";
+    //         var c = document.getElementById("c")
+    //         c.style.display = "block"
+    //     }
+    //     else{
+    //         plus.innerHTML = "+";
+    //         var c = document.getElementById("c")
+    //         c.style.display = "none"
+    //     }
+    // }
+    //
+
+
+
+
     showA = () => {
-        console.log("SHOW")
+         var plus = document.getElementById("plus-a")
+        var style = getComputedStyle(plus, null).display
+        if (style != "none") {
         var plus = document.getElementById("plus-a")
 
-        console.log(plus)
         if (plus.innerHTML === "+"){
             plus.innerHTML = "-";
             var a = document.getElementById("a")
@@ -560,13 +628,20 @@ class NavElement extends React.Component {
             var a = document.getElementById("a")
             a.style.display = "none"
         }
+        }
+        else{
+            ;
+        }
+
     }
 
     showB = () => {
-        console.log("SHOW")
+
+        var plus = document.getElementById("plus-b")
+        var style = getComputedStyle(plus, null).display
+        if (style != "none") {
         var plus = document.getElementById("plus-b")
 
-        console.log(plus)
         if (plus.innerHTML === "+"){
             plus.innerHTML = "-";
             var b = document.getElementById("b")
@@ -577,10 +652,12 @@ class NavElement extends React.Component {
             var b = document.getElementById("b")
             b.style.display = "none"
         }
-    }
+    }}
 
     showC = () => {
-        console.log("SHOW")
+        var plus = document.getElementById("plus-c")
+        var style = getComputedStyle(plus, null).display
+        if (style != "none"){
         var plus = document.getElementById("plus-c")
 
         console.log(plus)
@@ -594,13 +671,14 @@ class NavElement extends React.Component {
             var c = document.getElementById("c")
             c.style.display = "none"
         }
-    }
+    }}
 
   render() {
             if (this.props.name === "GET INVOLVED") {
                 return (
-                    <li className="navbar-element-sub" id = "f">
-                        {this.props.name} <span onClick={this.showC} id= "plus-c">+</span>
+                    <li className="navbar-element-sub" id = "f" onClick={this.showC}>
+
+                        {this.props.name} <span  id= "plus-c">+</span>
                         <ul className="sub" id="c">
                             <li onClick = {this.props.request}>{this.props.subl[0]} </li>
                             <li onClick = {this.props.volunteer} >{this.props.subl[1]}</li>
@@ -611,8 +689,8 @@ class NavElement extends React.Component {
 
             if (this.props.name === "ABOUT US") {
                 return (
-                    <li className="navbar-element-sub">
-                        {this.props.name} <span onClick={this.showB} id= "plus-b">+</span>
+                    <li className="navbar-element-sub" onClick={this.showB}>
+                        {this.props.name} <span id= "plus-b">+</span>
                         <ul className="sub" id="b" >
                             <li onClick={this.props.people} >{this.props.subl[0]}</li>
                             <li onClick = {this.props.ourMission} >{this.props.subl[1]}</li>
@@ -632,8 +710,8 @@ class NavElement extends React.Component {
 
             if (this.props.name === "OUR WORK") {
                 return (
-                    <li className="navbar-element-sub" >
-                        <span id = "our">{this.props.name}</span> <span onClick={this.showA} id= "plus-a">+</span>
+                    <li className="navbar-element-sub"  onClick={this.showA}>
+                        <span id = "our">{this.props.name}</span> <span id= "plus-a">+</span>
                         <ul className="sub" id="a">
                             <li onClick={this.props.issue}>{this.props.subl[0]}</li>
                             <li onClick={this.props.approach}>{this.props.subl[1]}</li>
@@ -672,60 +750,9 @@ grade level </h1>
                 <h3>The ability to read and write is critical to success. Literacy decreases poverty,
                     lowers disease rates and improves personal well being.
                 </h3>
-                <div className = "button-div">
+                <div className = "button-div-h">
                 <button onClick={this.props.donateMoney}>INSPIRE LITERACY</button>
                     <span onClick={this.props.issue}>LEARN MORE</span>
-                </div>
-            </div>
-        )
-
-  }
-}
-
-class HomeSolution extends React.Component{
-    constructor(props){
-    super(props);
-
-    }
-
-  render() {
-        return (
-            <div className= "home-stats" >
-                <h1>45 million Americans are functionally illiterate and cannot read above a fifth
-grade level </h1>
-                <h3>The ability to read and write is critical to success. Literacy decreases poverty,
-                    lowers disease rates and improves personal well being.
-                </h3>
-                <div className = "button-div">
-                <button onClick={this.props.donateMoney}>INSPIRE LITERACY</button>
-                    <span onClick={this.props.issue}>LEARN MORE</span>
-                </div>
-            </div>
-        )
-
-  }
-}
-
-class HomeProgress extends React.Component{
-    constructor(props){
-    super(props);
-
-    }
-
-  render() {
-        return (
-            <div className= "home-progress" >
-                <h1>Our Progress </h1>
-                <div className="progress-container">
-                    <div className="medals">
-                        <h3>650</h3>
-                        <h4>MEDALS DONATED</h4>
-                    </div>
-                    <div className="children">
-                        <h3>300</h3>
-                        <h4>MOTIVATED STUDENTS</h4>
-                    </div>
-
                 </div>
             </div>
         )
@@ -832,7 +859,7 @@ class Logo extends React.Component {
             <div className= "LOGO" >
                 <h1 onClick={this.props.home}>RUNNERS-4-READERS  </h1>
                 <div id="line"></div>
-                <img onClick={this.props.home} src = "/static/logo_green.png" alt="/static/logo_green.jpeg"/>
+                <img onClick={this.props.home} src = "/static/logo_green.png" alt="logo_green.jpeg"/>
                 <NavButton show={this.props.show} hide={this.props.hide} > </NavButton>
 
             </div>
@@ -1134,7 +1161,7 @@ class Volunteer extends React.Component{
                 <div className = "bg-image-volunteer">
                     <h2>Volunteer Opportunities</h2>
                     <div id="underline-7"></div>
-                                    “Life’s most persistent and urgent question is, what are you doing for others” <br></br>
+                                    “Life’s most persistent and urgent question is, what are you doing for others” <br id = "break"></br>
                                     -Martin Luther King, Jr.
 
                 </div>
@@ -1496,11 +1523,18 @@ class Footer extends React.Component{
         return(
             <div className="footer">
                 <div className="LOGO-2">
-                <h1 onClick={this.props.home}>RUNNERS-4-READERS  </h1>
+                <h1 onClick={this.props.home}>RUNNERS-4-READERS </h1>
                 <div id="line"></div>
-                <img onClick={this.props.home} src = "/static/logo_green_copy.png" alt="/static/logo_green.jpeg"/>
-
+                <img onClick={this.props.home} src = "/static/logo_green_copy.png" alt="logo_green.jpeg"/>
                 </div>
+                <div className="address">
+                    2639 Brush St <br></br>
+                    Detroit, MI 48201 <br></br>
+                    (313) 473-7323 <br></br>
+                    <div onClick = {this.props.contact} className = "contact-link">Contact Us</div>
+                </div>
+                <img  src = "/static/vintage_logo.png" alt="logo_green.jpeg"/>
+
             </div>
 
 

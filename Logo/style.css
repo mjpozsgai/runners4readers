@@ -1,5 +1,5 @@
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     #burger{
 
         width: 25px;
@@ -460,13 +460,13 @@ font-family: "proxima-nova", sans-serif;
     letter-spacing: .03rem;
     }
 
-.home-stats span {
-font-size: 14;
-font-weight: 200;
-margin-left: 1.3em;
-margin-top: .4em;
-cursor: pointer;
-}
+    .home-stats span {
+    font-size: 14;
+    font-weight: 200;
+    margin-left: 1.3em;
+    margin-top: .4em;
+    cursor: pointer;
+    }
 
 
     .donate-banner button {
@@ -484,9 +484,9 @@ cursor: pointer;
     letter-spacing: 1;
     cursor: pointer;
     border-radius: 7px;
-}
-
     }
+
+
     .button-div{
     display: flex;
     flex-direction: column;
@@ -626,7 +626,7 @@ cursor: pointer;
 
     .paralax h1 {
 
-text-align: center;
+    text-align: center;
     text-align: center;
     color: white;
     font-family: "proxima-nova", sans-serif;
@@ -1431,22 +1431,13 @@ border-top: 10px solid #065135;
         cursor: pointer;
         border-radius: 7px;
     }
-    .footer{
-        background-color: #3a3838;
+        .footer{
+        background-color: #565353;
         height: 200px;
-        width: 100%;
-        margin-bottom: .25em;
+                width: 100%;
 
         padding-top: 50px;
-        display: inline-block;
-    }
-
-    .footer .address{
-        color: white;
-        font-size: 0.9em;
-        font-weight: 100;
-        /* letter-spacing: 0.03rem; */
-        line-height: 1;
+            display: inline-block;
     }
 
     .footer .logo-footer{
@@ -1466,13 +1457,6 @@ border-top: 10px solid #065135;
         display:none;
     }
 
-    .contact-link{
-            padding-top: 10px;
-            border-bottom: 1px solid;
-            /* text-underline-position: left; */
-            margin-right: 35px;
-            cursor: pointer;
-        }
 
 
 
