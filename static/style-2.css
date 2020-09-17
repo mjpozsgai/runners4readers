@@ -11,6 +11,13 @@
 
     }
 
+
+    #star{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     #arrow {
         display: none;
     }
@@ -529,7 +536,6 @@
     .home-stats {
         background-image: url(child_reading2.jpg);
         background-size: cover;
-        max-height: 100%;
 
         /* margin-top: -55px; */
         backface-visibility: visible;
@@ -565,7 +571,7 @@
     font-weight: 300;
     font-size: 2.7em;
     position: relative;
-    left: 80px;
+    left: 50px;
     padding-top: 150px;
     max-width: 56rem;
     padding-bottom: .5em;
@@ -579,7 +585,7 @@
     /* padding-right: 4em; */
     max-width: 40rem;
     position: relative;
-    left: 80px;
+    left: 50px;
     font-weight: 300;
     font-size: 1.5em;
     margin-bottom: 2em;
@@ -915,7 +921,7 @@ font-size: 1.5rem;
     .button-div-h{
         display: flex;
     position: relative;
-    left: 80px;
+    left: 50px;
         flex-direction: row;
     margin-bottom: 6em;
     }
@@ -1544,6 +1550,8 @@ font-size: 1.5rem;
         backface-visibility: visible;
         padding-right: 48vw;
         font-weight: 100;
+                border-bottom: 1px solid;
+
         min-height: 569px;
         font-size: 1.8rem;
         padding-left: 1em;
@@ -1678,7 +1686,7 @@ font-size: 1.5rem;
     }
 
     .vintage-logo{
-        background-image: url(/static/vintage_logo.jpg);
+        background-image: url(vintage_logo.jpg);
     background-size: contain;
     height: 360px;
      float: left;
@@ -1719,8 +1727,12 @@ font-size: 1.5rem;
         border-radius: 7px;
     }
 
+    .LOGO-2 a{
+        display:flex;
+    }
+
     .footer{
-background-color: #3a3838;
+background-color: #065135;
     height: 200px;
     padding-top: 0;
     margin-bottom: .25em;
@@ -1732,8 +1744,15 @@ background-color: #3a3838;
     align-items: center;
     }
 
+    a{
+    color:inherit!important;}
 
-    .footer img {
+    a:hover {
+        color: inherit!important;
+        text-decoration: none!important;
+    }
+
+    .footer > a img {
         margin-top: 1px;
         height: 150px;
         margin-left: auto;
@@ -1751,10 +1770,29 @@ background-color: #3a3838;
         font-weight: 600;
     }
 
+    #olivia{
+        margin-top: 1em;
+    }
+
+        .involved-container a{
+            margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
     .footer ul{
         display:none;
     }
 
+        .team{
+        display: flex;
+        flex-direction: row;
+    }
+
+    input[type="image"] {
+    width: 50%;
+}
 
 
 
@@ -1808,11 +1846,21 @@ background-color: #3a3838;
 
         .contact-link{
             padding-top: 10px;
-            border-bottom: 1px solid;
+    text-decoration: underline;
             /* text-underline-position: left; */
             margin-right: 35px;
             cursor: pointer;
         }
+    .text-muted {
+    color: #6c757d!important;
+}
+        .invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
 
     .contact-text {
             float: left;

@@ -3,35 +3,37 @@ $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
 });
 
-
 class Home extends React.Component {
 
-    constructor(props){
+    constructor(props) {
 
         super(props);
-        this.state={
-            home: true,
-            ourMission: false,
-            people: false,
-            donate: false,
-            issue: false,
-            approach: false,
-            progress: false,
-            story: false,
-            request: false,
-            volunteer: false,
-            contact: false
+        this.state = {
+            home: this.props.home,
+            ourMission: this.props.ourMission,
+            people: this.props.people,
+            donate: this.props.donate,
+            issue: this.props.issue,
+            approach: this.props.approach,
+            progress: this.props.progress,
+            story: this.props.story,
+            request: this.props.request,
+            volunteer: this.props.volunteer,
+            contact: this.props.contact
         }
-
+        window.scrollTo(0, 0);
     }
 
 
     home(){
+
+        // var new_url = "http://runners4readers.org/"
+        // window.history.pushState({"html": "index.html"},"Runners-4-Readers", new_url)
         if ($(".home-slide")[0]){
           this.showNav()
         }
 
-        window.scrollTo(0, 0);
+
         this.setState({
             home: true,
             ourMission: false,
@@ -49,6 +51,9 @@ class Home extends React.Component {
     ourMission(){
         window.scrollTo(0, 0);
                 this.showNav()
+        //
+        // var new_url = "http://runners4readers.org/mission"
+        // window.history.pushState({"html": "index.html"},"Our Mission - Runners-4-Readers", new_url)
 
         this.setState({
             home: false,
@@ -68,7 +73,9 @@ class Home extends React.Component {
     people(){
         window.scrollTo(0, 0);
                 this.showNav()
-
+        //
+        // var new_url = "http://runners4readers.org/people"
+        // window.history.pushState({"html": "index.html"},"Our People - Runners-4-Readers", new_url)
         this.setState({
             home: false,
             ourMission: false,
@@ -88,9 +95,9 @@ class Home extends React.Component {
 
     donateMoney(){
                 this.showNav()
-
-        var new_url = "http://127.0.0.1:5000/Donate"
-        // window.history.pushState({"html": "index.html"},"Donate - Runners 4 Readers", new_url)
+        //
+        // var new_url = "http://runners4readers.org/donate"
+        // window.history.pushState({"html": "index.html"},"Donate - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
         this.setState({
             home: false,
@@ -109,6 +116,9 @@ class Home extends React.Component {
 
 
     issue(){
+
+        // var new_url = "http://runners4readers.org/issue"
+        // window.history.pushState({"html": "index.html"},"The Issue - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -127,6 +137,10 @@ class Home extends React.Component {
         })
     }
     approach(){
+
+        //
+        // var new_url = "http://runners4readers.org/approach"
+        // window.history.pushState({"html": "index.html"},"Our Approach - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -145,6 +159,9 @@ class Home extends React.Component {
         })
     }
     progress(){
+        //
+        // var new_url = "http://runners4readers.org/progress"
+        // window.history.pushState({"html": "index.html"},"Progress - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -163,6 +180,8 @@ class Home extends React.Component {
         })
     }
     story(){
+        // var new_url = "http://runners4readers.org/our-story"
+        // window.history.pushState({"html": "index.html"},"Our Story - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -181,6 +200,8 @@ class Home extends React.Component {
     }
 
     request(){
+        // var new_url = "http://runners4readers.org/request-medal"
+        // window.history.pushState({"html": "index.html"},"Request a Medal - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -199,6 +220,8 @@ class Home extends React.Component {
         })
     }
     volunteer(){
+        // var new_url = "http://runners4readers.org/volunteer"
+        // window.history.pushState({"html": "index.html"},"Volunteer - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
                 this.showNav()
 
@@ -217,6 +240,8 @@ class Home extends React.Component {
         })
     }
     contact(){
+        // var new_url = "http://runners4readers.org/contact"
+        // window.history.pushState({"html": "index.html"},"Contact - Runners-4-Readers", new_url)
         window.scrollTo(0, 0);
         this.showNav()
         this.setState({
@@ -309,7 +334,7 @@ class Home extends React.Component {
                 />
                 <HomeStats donateMoney = {this.donateMoney.bind(this)}
                             issue = {this.issue.bind(this)}/>
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
             </div>
         );
         }
@@ -330,7 +355,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <OurMission donateMoney = {this.donateMoney.bind(this)} />
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -352,7 +377,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <People donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -374,6 +399,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Issue/>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -395,7 +421,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Payment />
-                  <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -418,7 +444,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
             <Approach donateMoney = {this.donateMoney.bind(this)} />
-            <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -440,7 +466,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Progress donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -462,7 +488,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Story donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -484,7 +510,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Request donateMoney = {this.donateMoney.bind(this)}/>
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -506,7 +532,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Volunteer />
-                <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -550,7 +576,7 @@ class Home extends React.Component {
                         contact = {this.contact.bind(this)}
                         show={this.showNav.bind(this)}
                         issue = {this.issue.bind(this)}/>
-                        <Footer contact = {this.contact.bind(this)}></Footer>
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
         );
@@ -661,15 +687,15 @@ class NavElement extends React.Component {
         }
     }}
 
-  render() {
+    render() {
             if (this.props.name === "GET INVOLVED") {
                 return (
                     <li className="menu-click navbar-element-sub" id = "f" onClick={this.showC}>
 
                         {this.props.name} <span  className="menu-click" id= "plus-c">+</span>
                         <ul className="sub sub-c-hidden"  id="c">
-                            <li onClick = {this.props.request}>{this.props.subl[0]} </li>
-                            <li onClick = {this.props.volunteer} >{this.props.subl[1]}</li>
+                            <li>  <Link to ="/request">{this.props.subl[0]} </Link> </li>
+                            <li > <Link to = "/volunteer"> {this.props.subl[1]}</Link></li>
                         </ul>
                     </li>
                 )
@@ -680,9 +706,9 @@ class NavElement extends React.Component {
                     <li  className="menu-click navbar-element-sub" onClick={this.showB}>
                         {this.props.name} <span className="menu-click" id= "plus-b">+</span>
                         <ul className="sub sub-b-hidden" id="b" >
-                            <li onClick={this.props.people} >{this.props.subl[0]}</li>
-                            <li onClick = {this.props.ourMission} >{this.props.subl[1]}</li>
-                            <li onClick = {this.props.story} >{this.props.subl[2]}</li>
+                            <li > <Link to= "/people"> {this.props.subl[0]} </Link> </li>
+                            <li > <Link to = "/mission">{this.props.subl[1]} </Link></li>
+                            <li > <Link to="/our-story"> {this.props.subl[2]} </Link></li>
                         </ul>
                     </li>
                 )
@@ -690,9 +716,12 @@ class NavElement extends React.Component {
 
             if (this.props.name === "DONATE") {
                 return (
-                    <li  onClick = {this.props.donateMoney} className="menu-click navbar-element" id= "e">
-                        {this.props.name}
+                     <Link to="/donate">
+                    <li   className="menu-click navbar-element" id= "e">
+
+                            {this.props.name}
                     </li>
+                         </Link>
                 )
             }
 
@@ -701,9 +730,9 @@ class NavElement extends React.Component {
                     <li className="menu-click navbar-element-sub"  onClick={this.showA}>
                         <span className="menu-click" id = "our">{this.props.name}</span> <span className="menu-click" id= "plus-a">+</span>
                         <ul className="sub sub-a-hidden" id="a">
-                            <li onClick={this.props.issue}>{this.props.subl[0]}</li>
-                            <li onClick={this.props.approach}>{this.props.subl[1]}</li>
-                            <li onClick={this.props.progress}>{this.props.subl[2]}</li>
+                            <li ><Link to="/issue" >{this.props.subl[0]}</Link> </li>
+                            <li > <Link to="/approach">{this.props.subl[1]}</Link></li>
+                            <li > <Link to="/progress">{this.props.subl[2]} </Link></li>
                         </ul>
                     </li>
                 )
@@ -712,8 +741,9 @@ class NavElement extends React.Component {
             else {
 
             return (
-            <li  onClick = {this.props.contact} className= "menu-click navbar-element" id = "d">
-                {this.props.name}
+            <li   className= "menu-click navbar-element" id = "d">
+                <Link to="/contact">
+                    {this.props.name}</Link>
             </li>
             )
 
@@ -739,8 +769,8 @@ grade level </h1>
                     lowers disease rates and improves personal well being.
                 </h3>
                 <div className = "button-div-h">
-                <button onClick={this.props.donateMoney}>INSPIRE LITERACY</button>
-                    <span onClick={this.props.issue}>LEARN MORE</span>
+                <Link to ="/donate"><button >INSPIRE LITERACY</button> </Link>
+                    <Link to="/issue"><span>LEARN MORE</span></Link>
                 </div>
             </div>
         )
@@ -762,21 +792,21 @@ class GetInvolved extends React.Component{
                 <div className="involved-container">
                     <div className="donate-medals">
                         <h4>Have medals to donate? </h4>
-                        <button onClick={this.props.donateMoney}>DONATE MEDALS</button>
+                        <Link to ="/donate"><button>DONATE MEDALS</button> </Link>
                     </div>
 
                    <div className="donate-money">
                            <h4>Make a monetary donation</h4>
-                            <button onClick={this.props.donateMoney}>DONATE MONEY</button>
+                       <Link to ="/donate"><button>DONATE MONEY</button></Link>
                     </div>
                     <div className="donate-time">
                             <h4>Donate your time</h4>
-                            <button onClick={this.props.volunteer}>VOLUNTEER</button>
+                        <Link to ="/volunteer"><button>VOLUNTEER</button></Link>
                     </div>
 
                     <div className="request-medal">
                         <h4>Know young readers to inspire?</h4>
-                            <button onClick={this.props.request}>REQUEST A MEDAL</button>
+                        <Link to ="/request"><button>REQUEST A MEDAL</button></Link>
                     </div>
 
 
@@ -821,11 +851,11 @@ class Mission extends React.Component {
         return(
             <div className="mission">
                 <h1>
-                    We Are Runners 4 Readers
+                    We Are Runners-4-Readers
                 </h1>
                 <h3>
                 We provide a simple way for individuals to gift their medals.
-                We work with schools, community outreach and literacy programs to honor student's
+                We work with schools, community outreach and literacy programs to honor students'
                 reading achievements by repurposing medals into achievement awards to promote
                 reading.
                 </h3>
@@ -845,9 +875,10 @@ class Logo extends React.Component {
   render() {
         return (
             <div className= "LOGO" >
-                <h1 onClick={this.props.home}>RUNNERS-4-READERS  </h1>
+                <h1 ><Link to="/">RUNNERS-4-READERS</Link>  </h1>
                 <div id="line"></div>
-                <img onClick={this.props.home} src = "/static/logo_green.png" alt="logo_green.jpeg"/>
+                <Link to="/">
+                    <img src = "logo_green.png" alt="logo_green.jpeg"/></Link>
                 <NavButton show={this.props.show} hide={this.props.hide} > </NavButton>
 
             </div>
@@ -869,12 +900,12 @@ class Story extends React.Component{
         return (
             <div className= "our-story" >
                 <div id= "banner">
-              <img  src="/static/group.jpg"></img>
-                <img  src="/static/trio.jpg"></img>
-                <img   src="/static/paczki.jpeg"></img>
-                <img  src="/static/group_tree.jpg"></img>
-                <img   src="/static/tt2019.jpg"></img>
-                <img   src="/static/B10_2019.jpg"></img>
+              <img  src="group.jpg"></img>
+                <img  src="trio.jpg"></img>
+                <img   src="paczki.jpeg"></img>
+                <img  src="tt.jpg"></img>
+                <img   src="tt2019.jpg"></img>
+                <img   src="B10_2019.JPG"></img>
 
                 </div>
 
@@ -884,7 +915,7 @@ class Story extends React.Component{
 
                 <div className="story-container">
                     <div className= "story-box-1">
-                    <img  src="/static/boad.JPG"></img>
+                    <img  src="boad.JPG"></img>
                         <div className= "story-text">
                     Like so many runners, over the years, we have accumulated a pile of medals. Displaying them is a reminder of the training and pride in finishing a race. They carry with them distinct memories - a run with close family and friends that warrants a friendly competition resulting in everyone running just a little bit faster; or a run in the late fall/early spring with freezing rain or snow causing you to make fast friends with other runners huddling together to stay warm; or an annual Thanksgiving Day race.
                         </div>
@@ -892,15 +923,15 @@ class Story extends React.Component{
                     </div>
                     <div className = "story-box-2">
                         <div className= "story-text">
-                    The medals also serve to remind us of injuries and setbacks; a pulled hamstrings or sprained ankle, the need to walk and not run. But mostly they exemplify the determination needed to go the distance.Runners-4-Readers was born from a desire to regift our medals to a worthy cause. We know that literacy is a serious issue in our country and throughout the world.                      </div>
-                <img  src="/static/b10race.jpeg"></img>
+                    The medals also serve to remind us of injuries and setbacks; a pulled hamstring or sprained ankle, the need to walk and not run. But mostly they exemplify the determination needed to go the distance. Runners-4-Readers was born from a desire to regift our medals to a worthy cause. We know that literacy is a serious issue in our country and throughout the world.                      </div>
+                <img  src="b10race.jpeg"></img>
 
                     </div>
                     <div className= "story-box-3">
-                    <img  src="/static/paczki.jpeg"></img>
+                    <img  src="paczki.jpeg"></img>
 
                         <div className= "story-text">
- The statistics are staggering. Once a child has fallen behind in reading, it takes hard work and determination to achieve the necessary stages to succeed. The idea to partner with school districts, community outreach and libraries to celebrate a child’s achievement in reading, immediately resonated with us. It allows us an opportunity to repurpose used medals and reward a child’s hard work – putting into play exactly what it takes to train for races.
+ The statistics are staggering. Once a child has fallen behind in reading, it takes hard work and determination to achieve the necessary stages to succeed. The idea to partner with school districts, community outreach, and libraries to celebrate a child’s achievement in reading immediately resonated with us. It allows us an opportunity to repurpose used medals and reward a child’s hard work – putting into play exactly what it takes to train for races.
                         </div>
                     </div>
 
@@ -910,7 +941,7 @@ class Story extends React.Component{
 Discipline. Courage. Determination. Achieving reading readiness opens the door to a brighter future and Runners-4-Readers is excited to be a part of that journey. Because readers make leaders.
 
                         </div>
-                    <img  src="/static/B10_2019.jpg"></img>
+                    <img  src="B10_2019.JPG"></img>
 
                     </div>
 
@@ -920,7 +951,7 @@ Discipline. Courage. Determination. Achieving reading readiness opens the door t
 
             <div className="donate-banner" >
                     <div className = "button-div">
-                <button onClick={this.props.donateMoney}>CONTRIBUTE</button>
+                        <Link to ="/donate"><button>CONTRIBUTE</button></Link>
                     <h4>Become a part of something bigger than yourself
 </h4>
                 </div>
@@ -951,15 +982,25 @@ class Payment extends React.Component{
                 <div className= "payment-container">
                     <h4>Make a Donation</h4>
                     <h5>Literacy changes lives. <br/> You can help.</h5>
-                    <h5 className="pay-text">
-                        Give by check made payable to:<br/>
+
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="67KTB43R29WPC" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                        </form>
+
+
+                            <h5 className="pay-text">
+                              <br></br>  <br></br>  <b>OR</b><br></br>
+                        Give by check made payable to:<br/><br/>
                         <b>Runners-4-Readers</b>
-                        <br></br><br></br>
+                        <br></br>
                         2639 Brush Street<br/>
                         Detroit, MI 48201
-                        <br></br>  <br></br><br></br><br></br><br></br>
 
-                        Payment by card coming soon!
+
 
                     </h5>
                     {/*<div className="amount">*/}
@@ -987,7 +1028,9 @@ Also we’re not picky! If you’re cleaning out your closet and found a dusty b
 
 
                 </div>
-                <div id = "notice"> We are a 501(c)3 charitable organization. All donations are tax-deductable</div>
+                <div id = "notice"> We are a 501(c)3 charitable organization. All donations are tax-deductable.</div>
+                <a href="https://www.guidestar.org/profile/85-0546702" target="_blank"><img id="star" src="https://widgets.guidestar.org/gximage2?o=9890051&l=v4" /></a>
+
                 </div>
             </div>
 
@@ -1041,7 +1084,7 @@ class Issue extends React.Component{
                     <ul id = "impact-list">
                         <li className="slidein">Inability to find work leads to <span> welfare </span> and <span>unemployment</span>
  </li>
-                        <li className="slidein"><span>Juvenile delinquency </span>which leads to <span>incarceration</span></li>
+                        <li className="slidein"><span>Juvenile delinquency </span>which leads to incarceration</li>
                     <li className="slidein">Gender and racial <span>inequality</span></li>
                     </ul>
 
@@ -1067,7 +1110,7 @@ class Approach extends React.Component {
 
                 <div className="approach-container">
                     <div className= "approach-box-1">
-                        <img src = "/static/child_book_on_head_2.jpg"></img>
+                        <img src = "child_book_on_head_2.jpg"></img>
                         <div className= "approach-text">
                             <h2>Read</h2>
                             To develop enthusiasm for and a habit of reading, parents and teachers need to model being a reader, read to their children or students, and encourage reading. Just like running, reading takes discipline and hard work. Reading’s long-term effect on a student’s life is powerful. It opens the door to success.
@@ -1080,10 +1123,10 @@ class Approach extends React.Component {
                             <h2>Lead</h2>
                             Engaging reluctant readers is a challenge and in large part, depends on having positive role models. We can do our part by championing their achievement with a medal that symbolizes not only the hard work of the donor, but the hard work of the student.
                         </div>
-                         <img src = "/static/child_parent_crop.jpg"></img>
+                         <img src = "child_parent_crop.jpg"></img>
                     </div>
                     <div className= "approach-box-3">
-                        <img src = "/static/child_with_medal_crop.jpg"></img>
+                        <img src = "child_with_medal_crop.jpg"></img>
                         <div className= "approach-text">
                             <h2>Succeed</h2>
                         Working together with school administrations, community outreach, libraries and literacy programs, our goal is to have a positive impact on a child’s success and celebrate their hard work. They WILL succeed when they can read.
@@ -1111,14 +1154,14 @@ class Progress extends React.Component{
                 <div className="bg-image-progress"></div>
                 <h1>Progress</h1>
                 <div id="underline-5" ></div>
-                <div className="progress-text">Our collection is growing! Through the generosity of race organizers, we place donation bins on race day at events to collect old medals that runners would like to gift and help promote literacy in children. By word of mouth we’ve received medals from individuals as well as running stores that have been repurposed into medals for readers.
+                <div className="progress-text">Our collection is growing! Through the generosity of race organizers, we place donation bins on race day at events to collect old medals that runners would like to gift and help promote literacy in children. By word of mouth we’ve received medals from individuals as well as running stores that have been repurposed into achievement medals for readers.
 
                     <br></br> <br></br>
 We cannot wait to give them away! To date, we’ve contacted local schools, libraries and community outreach facilities to partner with and distribute our medals. Check back regularly to see the smiling faces of the recipients!
 </div>
             <div className="donate-banner" >
                     <div className = "button-div">
-                <button onClick={this.props.donateMoney}>CONTRIBUTE</button>
+                        <Link to ="/donate"><button>CONTRIBUTE</button></Link>
                     <h4>Together we’re creating a brighter future where all children have a chance to succeed
 </h4>
                 </div>
@@ -1141,12 +1184,12 @@ class Volunteer extends React.Component{
                 <div className = "bg-image-volunteer">
                     <h2>Volunteer Opportunities</h2>
                     <div id="underline-7"></div>
-                                    “Life’s most persistent and urgent question is, what are you doing for others” <br id = "break"></br>
+                                    “Life’s most persistent and urgent question is, what are you doing for others?” <br id = "break"></br>
                                     -Martin Luther King, Jr.
 
                 </div>
                 <div className="volunteer-text">
-            We love help! We have several great opportunities to help Runners-4-Readers that range from assisting at races collecting donated medals to establishing educational partners to celebrate reading achievements. To learn more about you can best assist us, please complete the following form and we will be happy to see where you can be beneficial.
+            We love help! We have several great opportunities to help Runners-4-Readers that range from assisting at races and collecting donated medals to establishing educational partners to celebrate reading achievements. To learn more about how you can best assist us, please complete the following form and we will have a team member connect with you.
                 </div>
 
                 <InfoForm> </InfoForm>
@@ -1198,10 +1241,9 @@ class Contact extends React.Component{
 
 
                 <div className="contact-text">
-                Have a question about our work? Want to get involved?
+                Whether you have a question about our work, want to get involved or just want to say hello, we’d love to hear from you.
                     <br></br><br></br>
-                    We’d love to hear from you. Email us at team@runners4readers.org
-
+                Email us at runners4readers@gmail.com
                 </div>
 
                 <div className="vintage-logo">
@@ -1234,9 +1276,9 @@ class People extends React.Component{
                     <div className= "person" id = "Tami">
 
                         <div className="person-info">
-                            <img src = "/static/tami_medal.jpeg"></img>
-                            <span>    <h2>Tami Christan</h2>
-                        <h3>President</h3>I love reading; books are like old friends I can revisit. I love how the story unfolds and when it’s really good, I can read it over and over again. Truly a great escape, but also essential to everything we do. An avid runner, I’ve trained and run a handful of half marathon races; various trail runs and 5k/10k races. My favorite run was my first half marathon; I ran to raise money for clean wells in Africa for the Pokot Tribe with my church. It was a huge accomplishment to run a half marathon and I was terrified. The feeling of joy that I carry today, knowing that long after I am gone, someone will have clean water was worth all the hard work that went into training. A proud mother of two daughters; they are the first in my family to attend college.
+                            <img src = "tami_medal.jpeg"></img>
+                            <span>    <h2>Tami Christian</h2>
+                        <h3>President</h3>I love reading; books are like old friends I can revisit. I enjoy how the story unfolds and when it’s really good, I can read it over and over again. Truly a great escape, but also essential to everything we do. An avid runner, I’ve trained and run a handful of half marathon races; various trail runs and 5k/10k races. My favorite run was my first half marathon; I ran to raise money to build clean wells in Africa for the Pokot Tribe with my church. It was a huge accomplishment to run a half marathon and I was terrified. The feeling of joy that I carry today, knowing that long after I am gone, someone will have clean water was worth all the hard work that went into training. A proud mother of two daughters; they are the first in my family to attend college.
                             </span>
 
                         </div>
@@ -1245,7 +1287,7 @@ class People extends React.Component{
 
 
                         <div className="person-info">
-                        <img src = "/static/Crowe_Outdoors_2019.jpg"></img>
+                        <img src = "Crowe_Outdoors_2019.jpg"></img>
         <span>                        <h2>Brian Crowe</h2>
                         <h3>Vice President</h3> Howdy...I'm Brian, a single dad to an awesome teenage daughter.  I love to be outdoors (hiking, kayaking, etc.) and when I cannot get out in the wild I will opt to run barefoot in the grass and camp in the backyard.  I'm no speed reader but definitely believe reading can open up the world, initiate a spark and stretch your imagination.  A great quick read, with a few pictures in there too, is Jonathan Livingston Seagull by Richard Bach.
 Believe in yourself and you will soar!</span>
@@ -1256,7 +1298,7 @@ Believe in yourself and you will soar!</span>
 
 
                         <div className="person-info">
-                            <img src = "/static/elizabeth.jpeg"></img>
+                            <img src = "elizabeth.jpeg"></img>
 
                             <span>                     <h2>Elizabeth Parra</h2>
                         <h3>Secretary</h3>I am an outdoor enthusiast that doesn’t see a challenge that can’t be overcome. An avid runner and hiker, I am training for my first half marathon. Besides loving the outdoors and trying to spend as much time as possible on trails, I also love to read. Some of my favorite authors are John Steinbeck, Harold Bell Wright, Augusta Jane Evans and many others. I tried to instill the love of reading in all three of my children who are now in college. I believe reading provides a good foundation to your future and would like to add encouragement to children who are trying to reach their next reading milestone. I believe rewarding children with the progress of their efforts encourages them to keep going to reach even higher goals.
@@ -1265,27 +1307,46 @@ Believe in yourself and you will soar!</span>
                     <div className= "person" id = "Curtis">
 
                         <div className="person-info">
-                              <img src = "/static/curtis.jpg"></img>
+                              <img src = "curtis.jpg"></img>
                             <span>                        <h2>Curtis Leszczynski</h2>
-                        <h3>Treasurer</h3>I was born in the City of Detroit and have a love of sports, running, biking and our city. Being from the inner city, I was the first in my family to graduate from college and reading was a big part of it. I graduated from Michigan State University and saw first-hand that education was the ticket to a better career. Since then, I’ve sent my 3 sons to Michigan State and encouraged other family members to go to college. We participate in many running events, work out on a regular basis and of course.  Reading for knowledge never stops.</span>
+                        <h3>Treasurer</h3>I was born in the City of Detroit and have a love of sports, running, biking, and our city. Being from the inner city, I was the first in my family to graduate from college and reading was a big part of it. I graduated from Michigan State University and saw first-hand that education was the ticket to a better career. Since then, I’ve sent my 3 sons to Michigan State and encouraged other family members to go to college. We participate in many running events, work out on a regular basis, and of course read.  Reading for knowledge never stops.</span>
                         </div>
                     </div>
                                     <h1>Team Members</h1>
                 <div id = "underline-4"></div>
+
+                    <div className="team">
                     <div className= "person" id = "olivia">
 
                         <div className="person-info">
-                              <img src = "/static/olivia.jpg"></img>
+                              <img src = "olivia.jpg"></img>
                             <span>                        <h2>Olivia Parra</h2>
                         <h3>Social Media Coordinator </h3></span>
                         </div>
+                    </div>
+                    <div className= "person" id = "olivia">
+
+                        <div className="person-info">
+                              <img src = "matt.png"></img>
+                            <span>                        <h2>Matthew Pozsgai</h2>
+                        <h3>Web Developer</h3></span>
+                        </div>
+                    </div>
+                    <div className= "person" id = "olivia">
+
+                        <div className="person-info">
+                              <img src = "gabby.jpeg"></img>
+                            <span>                        <h2>Gabby Christian</h2>
+                        <h3>Member at Large </h3></span>
+                        </div>
+                    </div>
                     </div>
 
 
                 </div>
                 <div className="donate-banner" >
                     <div className = "button-div">
-                <button onClick={this.props.donateMoney}>DONATE NOW</button>
+                        <Link to ="/donate"><button>DONATE NOW</button></Link>
                     <h4>We inspire young readers with achievement medals with the goal of
                             literacy for all</h4>
                 </div>
@@ -1333,12 +1394,12 @@ class OurMission extends React.Component{
                 <h1>Our Mission</h1>
                 <div id="underline-4" ></div>
                 <div className="mission-text">
-                    Runners-4-Readers (R4R) is a pay it forward charity that receives donations of goodwill and support and does not require the donor to be of substantial needs, yet allows them to pay it forward to another individual. R4R offers people of diverse ethnicity, religions, nationalities, and cultures the opportunity to demonstrate a shared human compassion anonymously or personally. <br></br><br></br>Our three year plan is to acquire a dedicated office and location; hire at least one full-time employee; further develop medal gifting programs with school districts, community and community outreach centers in the United States; expand our successful programs within elementary programs to reach the goals of No Child Left Behind and Every Student Succeeds Act; and continue to research and publish and verify scientific data about the benefit of R4R for recipients, students, and volunteers
+                    Runners-4-Readers (R4R) is a pay it forward charity that receives donations of goodwill and support and does not require the donor to be of substantial needs, yet allows them to pay it forward to another individual. R4R offers people of diverse ethnicity, religions, nationalities, and cultures the opportunity to demonstrate a shared human compassion anonymously or personally. <br></br><br></br>Our three year plan is to acquire a dedicated office and location; hire at least one full-time employee; further develop medal gifting programs with school districts, community and community outreach centers in the United States; expand our successful programs within elementary programs to reach the goals of No Child Left Behind and Every Student Succeeds Act; and continue to research and publish and verify scientific data about the benefit of R4R for recipients, students, and volunteers.
 
 </div>
             <div className="donate-banner" >
                     <div className = "button-div">
-                <button onClick={this.props.donateMoney}>CONTRIBUTE</button>
+                        <Link to ="/donate"><button>CONTRIBUTE</button></Link>
                     <h4>Your support helps us celebrate young readers and promote literacy
 </h4>
                 </div>
@@ -1349,6 +1410,122 @@ class OurMission extends React.Component{
   }
 }
 
+function submitToAPI(e) {
+       e.preventDefault();
+       var URL = "https://5snb5nlh76.execute-api.us-east-1.amazonaws.com/test/contact-us";
+       var type = "volunteer"
+        if (window.location.href.indexOf("volunteer") > -1) {
+            type = "volunteer"
+        }
+        else{
+            type = "request a medal"
+        }
+
+            var mobilere = /^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+            var mobilere2 = /[0-9]{10}/;
+
+            if ((!mobilere.test($("#phone").val())) && (!mobilere2.test($("#phone").val())) ) {
+                alert ("Please enter valid mobile number");
+                return;
+            }
+
+            if ($("#email").val()=="") {
+                alert ("Please enter your email address");
+                return;
+            }
+
+            var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#email").val())) {
+                alert ("Please enter valid email address");
+                return;
+            }
+
+            if ($("#firstName").val()=="") {
+                alert ("Valid first name required");
+                return;
+            }
+            if ($("#lastName").val()=="") {
+                alert ("Valid last name required");
+                return;
+            }
+
+            if ($("#address").val()=="") {
+                alert ("Valid address required");
+                return;
+            }
+            if ($("#state").val()=="") {
+                alert ("Valid state required");
+                return;
+            }
+            if ($("#city").val()=="") {
+                alert ("Valid city required");
+                return;
+            }
+            if ($("#state").val()=="") {
+                alert ("Valid zip required");
+                return;
+            }
+
+            if ($("#comments").val()=="") {
+                alert ("Valid message required");
+                return;
+            }
+
+
+
+       var fname = $("#firstName").val()
+       var lname = $("#lastName").val()
+       var organization = $("#organization").val()
+       var phone = $("#phone").val()
+        var email = $("#email").val()
+
+        var address = $("#address").val()
+        var address2 = $("#address2").val()
+        var state = $("#state").val()
+        var zip = $("#zip").val()
+        var city = $("#city").val()
+        var comments = $("#comments").val()
+
+
+
+
+       var data = {
+          fname : fname,
+          phone : phone,
+          email : email,
+          comments : comments,
+           lname: lname,
+           organization: organization,
+           address: address,
+           address2: address2,
+           state : state,
+           zip: zip,
+           city: city,
+           type: type
+        };
+
+
+       console.log(data)
+
+       $.ajax({
+         type: "POST",
+         url : "https://5snb5nlh76.execute-api.us-east-1.amazonaws.com/test/contact-us",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+
+         success: function () {
+           // clear form and show a success message
+           alert("Successfull");
+           document.getElementById("contact-form").reset();
+         },
+         error: function () {
+           // show an error message
+           alert("UnSuccessfull");
+         }});
+     }
 
 class InfoForm extends React.Component{
 
@@ -1360,23 +1537,24 @@ class InfoForm extends React.Component{
 
         return(
             <div className="col-md-8 order-md-1">
-                    <form className="needs-validation" noValidate>
+                    <form id="contact-form" >
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="firstName">First name</label>
-                                <input type="text" className="form-control" id="firstName" placeholder="" value=""
+                                <input type="text" className="form-control" id="firstName" placeholder=""
                                 ></input>
                             </div>
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="lastName">Last name</label>
-                                <input type="text" className="form-control" id="lastName" placeholder="" value=""
+                                <input type="text" className="form-control" id="lastName" placeholder=""
                                 ></input>
 
                             </div>
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="Organization">Organization</label>
+                            <label htmlFor="Organization">Organization</label> <span
+                            className="text-muted">(Optional)</span>
                             <div className="input-group">
                                 <input type="text" className="form-control" id="organization"
                                 ></input>
@@ -1409,7 +1587,7 @@ class InfoForm extends React.Component{
                         <div className="row">
                             <div className="col-md-5 mb-3">
                                 <label htmlFor="City">City</label>
-                                <input type="text" className="form-control" id="zip" placeholder="" ></input>
+                                <input type="text" className="form-control" id="city" placeholder="" ></input>
 
                             </div>
                             <div className="col-md-4 mb-3">
@@ -1479,7 +1657,7 @@ class InfoForm extends React.Component{
                         <div className="mb-3">
                             <label htmlFor="comment">Comments</label>
                             <textarea type="text" className="form-control" rows="3"id="comments" placeholder="Enter your message..."></textarea>
-                             <button type="button">Submit
+                             <button type="button" onClick={submitToAPI}>Submit
                             </button>
                         </div>
 
@@ -1507,17 +1685,17 @@ class Footer extends React.Component{
         return(
             <div className="footer">
                 <div className="LOGO-2">
-                <h1 onClick={this.props.home}>RUNNERS-4-READERS </h1>
+                    <Link to ="/"><h1 >RUNNERS-4-READERS </h1>
                 <div id="line"></div>
-                <img onClick={this.props.home} src = "/static/logo_green_copy.png" alt="logo_green.jpeg"/>
-                </div>
+                <img  src = "logo_green_copy.png" alt="logo_green.jpeg"/>
+                </Link></div>
                 <div className="address">
                     2639 Brush St <br></br>
                     Detroit, MI 48201 <br></br>
-                    (313) 473-7323 <br></br>
-                    <div onClick = {this.props.contact} className = "contact-link">Contact Us</div>
+                    (313) 473-READ <br></br>
+                    <Link to="/contact"> <div  className = "contact-link">Contact Us</div></Link>
                 </div>
-                <img  src = "/static/vintage_logo.png" alt="logo_green.jpeg"/>
+                <Link to="/"><img  src = "vintage_logo.png" alt="logo_green.jpeg"/></Link>
 
             </div>
 
@@ -1528,7 +1706,102 @@ class Footer extends React.Component{
 }
 
 
+
+const Router = window.ReactRouterDOM.BrowserRouter;
+const Route =  window.ReactRouterDOM.Route;
+const Link =  window.ReactRouterDOM.Link;
+const Switch = window.ReactRouterDOM.Switch;
+const h = window.HistoryLibrary.createBrowserHistory();
+
+const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
+if (path) {
+    h.replace(path);
+}
+
+class ScrollToTop extends React.Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
+
+  render() {
+    return this.props.children
+  }
+}
+
+function App() {
+
+    return (
+    <Router >
+
+        <Switch>
+          <Route
+              key = "home"
+              exact path='/'
+              render={(props) => <Home {...props} home={true} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            {/*<IndexRoute*/}
+            {/*  render={(props) => <Home {...props} home={true} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}*/}
+            {/*/>*/}
+            <Route
+                key="mission"
+              exact path='/mission'
+              render={(props) => <Home {...props} home={false} ourMission={true} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+          <Route
+              key = "people"
+              exact path='/people'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {true} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key = "donate"
+              exact path='/donate'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {true} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key = "issue"
+              exact path='/issue'
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={true} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key = "approach"
+              exact path='/approach'
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={true} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key="progress"
+              exact path='/progress'
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={true} story = {false} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key="story"
+             exact path='/our-story'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {true} request={false} volunteer={false} contact={false} />}
+            />
+            <Route
+                key="request"
+              exact path='/request'
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={true} volunteer={false} contact={false} />}
+            />
+            <Route
+                key ="volunteer"
+             exact path='/volunteer'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={true} contact={false} />}
+            />
+            <Route
+                key="contact"
+               exact path='/contact'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={true} />}
+            />
+        </Switch>
+   </Router>
+    )};
+
+
+
+
 ReactDOM.render(
-  React.createElement(Home),
+  React.createElement(App),
   document.getElementById('root')
 );

@@ -51,3 +51,30 @@ reservations[date] = [
     "cost": (cost[machine_id] * duration),
     "username": username}
 ]
+
+
+
+
+
+
+
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <HostName>myhostname.com</HostName>
+      <ReplaceKeyPrefixWith>#!/</ReplaceKeyPrefixWith>
+    </Redirect>
+  </RoutingRule>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>403</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <HostName>myhostname.com</HostName>
+      <ReplaceKeyPrefixWith>#!/</ReplaceKeyPrefixWith>
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>

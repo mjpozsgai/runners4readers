@@ -11,6 +11,13 @@
     }
 
 
+      #star{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
     .hero h1 {
     font-size: 30;
     letter-spacing: .06rem;
@@ -218,22 +225,22 @@
     }
     .menu-container {
         top: 0;
-        width: 250px;
+        width: 249px;
         margin-top: 0;
         z-index: 300;
         padding-top: 20px;
-        height: 100%;
-        min-height: 100vh;
+        /*height: 100%;*/
+        /*min-height: 100vh;*/
         -webkit-transition: all 400ms ease-in-out;
         transition: all 400ms ease-in-out;
         color: #656060;
         font-family: "proxima-nova", sans-serif;
         background-color: white;
-        position: fixed;
+        /*position: fixed;*/
         /*border-top: 1px solid #066e47;*/ƒ
         justify-content: space-between;
         display: none;
-        border-left: 1px solid #c2c0c0;
+        /*border-left: 1px solid #c2c0c0;*/
         flex-direction: column;
         position: absolute;
         top: 0;
@@ -351,7 +358,6 @@
     }
 
     .payment {
-        height: 100%;
         display: block;
         margin-bottom: 1em;
     }
@@ -1195,6 +1201,7 @@
         -o-transform: translate3d(-250px, 0, 0);
         transform: translate3d(-250px, 0, 0);
         -webkit-transition: all 400ms ease-in-out;
+        border-right: 1px solid #c2c0c0 ;
         transition: all 400ms ease-in-out;
         padding-top: 55px;
         position: relative;
@@ -1221,22 +1228,22 @@
 
     .menu-container-visible.menu-container {
         top: 0;
-        width: 250px;
+        width: 249px;
         margin-top: 0;
         z-index: 300;
         padding-top: 20px;
-        height: 100%;
-        min-height: 100vh;
+        /*height: 100%;*/
+        /*min-height: 100vh;*/
         -webkit-transition: all 400ms ease-in-out;
         transition: all 400ms ease-in-out;
         color: #656060;
         font-family: "proxima-nova", sans-serif;
         background-color: white;
-        position: fixed;
+        /*position: fixed;*/
         /*border-top: 1px solid #066e47;*/ƒ
         justify-content: space-between;
         display: flex;
-        border-left: 1px solid #c2c0c0;
+        /*border-left: 1px solid #c2c0c0;*/
         flex-direction: column;
         position: absolute;
         top: 0;
@@ -1266,6 +1273,18 @@
         border: 1px solid;
         justify-self: center;
     }
+
+    .text-muted {
+    color: #6c757d!important;
+}
+
+    .invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
 
     .people-container h2 {
         width: 100%;
@@ -1533,6 +1552,7 @@
         font-weight: 100;
         min-height: 457px;
         font-size: 1.3rem;
+        border-bottom: 1px solid;
         padding-left: 1em;
         color: #454545;
         text-align: center;
@@ -1696,9 +1716,12 @@
         cursor: pointer;
         border-radius: 7px;
     }
+        .LOGO-2 a{
+        display:flex;
+    }
 
     .footer{
-background-color: #3a3838;
+background-color: #065135;
     height: 200px;
     padding-top: 0;
     margin-bottom: .25em;
@@ -1710,10 +1733,20 @@ background-color: #3a3838;
         flex-direction: row;
 
 
+
+    }
+
+
+    a{
+    color:inherit!important;}
+
+    a:hover {
+        color: inherit!important;
+        text-decoration: none!important;
     }
         .contact-link{
             padding-top: 10px;
-            border-bottom: 1px solid;
+            text-decoration: underline;
             /* text-underline-position: left; */
             margin-right: 35px;
             cursor: pointer;
@@ -1795,18 +1828,33 @@ background-color: #3a3838;
 
     }
 
-        .footer img {
+        .footer a img {
         margin-top: 1px;
         height: 150px;
         margin-left: auto;
     }
         .vintage-logo{
-        background-image: url(/static/vintage_logo.jpg);
+        background-image: url(vintage_logo.jpg);
     background-size: contain;
     height: 320px;
     float: left;
     display: inline-block;
     width: 320px;
     }
+
+    .involved-container a{
+            margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+            .team{
+        display: flex;
+        flex-direction: row;
+    }
+
+    input[type="image"] {
+    width: 50%;
+}
 
 }
