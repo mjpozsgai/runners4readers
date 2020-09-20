@@ -332,8 +332,8 @@
     #c {
         /*padding-left: 22.1em;*/
         /*padding-right: 25.39em;*/
-        padding-left: 29vw;
-        padding-right: 34vw;
+        padding-left: 28vw;
+        padding-right: 33vw;
     }
 
     #d {
@@ -342,6 +342,7 @@
         color: #065135;
 
     }
+
 
     #e {
         color: inherit;
@@ -617,10 +618,84 @@ font-size: 1.5rem;
 
     }
 
+    .run-text button {
+        font-family: "proxima-nova", sans-serif;
+        background-color: #086845;
+        color: #fff;
+        font-weight: 300;
+        font-size: 1.5rem;
+        height: 60px;
+        padding: 4px 22px 4px;
+        margin-left: auto;
+        letter-spacing: 1;
+        cursor: pointer;
+        border-radius: 7px;
+        float: left;
+
+    }
+
     .donate-banner {
         border: 1px solid;
         margin-top: 4em;
         margin-bottom: 4em;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-width: 48em;
+        justify-content: center;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+
+    }
+
+    .fb_iframe_widget {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+
+    position: relative;
+        }
+
+.fb-container{
+display: flex;
+    /* flex-direction: column; */
+    margin-right: 2em;
+    /* margin-left: auto; */
+    align-items: center;
+
+}
+
+
+.facebook:hover {
+    opacity: 0.7;
+}
+
+.facebook {
+width: 40px;
+    height: 40px;
+    background-image: url(facebook.png);
+    background-size: cover;
+    margin-right: 2em;
+}
+
+.instagram:hover {
+    opacity: 0.7;
+}
+
+.instagram {
+width: 40px;
+    height: 40px;
+    margin-right: 2em;
+    align-self: center;
+    margin-left: auto;
+    background-image: url(instagram.png);
+    background-size: cover;
+}
+
+    .donate-banner-run {
+
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -1362,6 +1437,36 @@ font-size: 1.5rem;
     }
 
     .progress-page h1 {
+        text-align: center;
+        font-size: 3.8rem;
+        padding-top: 1em;
+
+    }
+
+
+        .bg-image-progress {
+        background-image: url(reading3_crop.jpg);
+        background-size: cover;
+        height: 65%;
+        margin-top: 121px;
+        backface-visibility: visible;
+        display: flex;
+        background-position-y: bottom;
+    }
+
+    .run-text {
+        margin-right: auto;
+        margin-left: auto;
+        font-weight: 200;
+        max-width: 38em;
+        color: #454545;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .run-page h1 {
+            margin-top: 100px;
+
         text-align: center;
         font-size: 3.8rem;
         padding-top: 1em;

@@ -17,6 +17,7 @@ class Home extends React.Component {
             approach: this.props.approach,
             progress: this.props.progress,
             story: this.props.story,
+            run: this.props.run,
             request: this.props.request,
             volunteer: this.props.volunteer,
             contact: this.props.contact
@@ -43,6 +44,7 @@ class Home extends React.Component {
             approach: false,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -64,6 +66,7 @@ class Home extends React.Component {
             approach: false,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -85,6 +88,7 @@ class Home extends React.Component {
             approach: false,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -108,6 +112,7 @@ class Home extends React.Component {
             approach: false,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -131,6 +136,7 @@ class Home extends React.Component {
             approach: false,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -153,6 +159,7 @@ class Home extends React.Component {
             approach: true,
             progress: false,
             story: false,
+            run: false,
             request: false,
             volunteer: false,
             contact: false
@@ -175,6 +182,7 @@ class Home extends React.Component {
             progress: true,
             story: false,
             request: false,
+            run: false,
             volunteer: false,
             contact: false
         })
@@ -195,6 +203,7 @@ class Home extends React.Component {
             progress: false,
             story: true,
             request: false,
+            run: false,
             volunteer: false
         })
     }
@@ -215,6 +224,7 @@ class Home extends React.Component {
             progress: false,
             story: false,
             request: true,
+            run: false,
             volunteer: false,
             contact: false
         })
@@ -235,7 +245,29 @@ class Home extends React.Component {
             progress: false,
             story: false,
             request: false,
+            run: false,
             volunteer: true,
+            contact: false
+        })
+    }
+    run(){
+        // var new_url = "http://runners4readers.org/run"
+        // window.history.pushState({"html": "index.html"},"Volunteer - Runners-4-Readers", new_url)
+        window.scrollTo(0, 0);
+                this.showNav()
+
+        this.setState({
+            home: false,
+            ourMission: false,
+            people: false,
+            donate: false,
+            issue: false,
+            approach: false,
+            progress: false,
+            story: false,
+            request: false,
+            volunteer: false,
+            run: true,
             contact: false
         })
     }
@@ -255,6 +287,7 @@ class Home extends React.Component {
             story: false,
             request: false,
             volunteer: false,
+            run: false,
             contact: true
         })
     }
@@ -285,9 +318,7 @@ class Home extends React.Component {
 
             var x = event.target.className;
             var b = x.includes('menu-click')
-            console.log(x)
-            console.log(b)
-            console.log(!b)
+
             if (($(".home-slide")[0]) && (!b)){
                 window.scrollTo(0, 0);
 
@@ -322,6 +353,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -350,6 +382,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -371,6 +404,7 @@ class Home extends React.Component {
                         approach = {this.approach.bind(this)}
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         show={this.showNav.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
@@ -394,6 +428,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -416,6 +451,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
                         request = {this.request.bind(this)}
+                        run={this.run.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         show={this.showNav.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -439,6 +475,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         story = {this.story.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -461,6 +498,7 @@ class Home extends React.Component {
                         progress = {this.progress.bind(this)}
                         show={this.showNav.bind(this)}
                         story = {this.story.bind(this)}
+                        run={this.run.bind(this)}
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
@@ -486,6 +524,7 @@ class Home extends React.Component {
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
+                        run={this.run.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Story donateMoney = {this.donateMoney.bind(this)}/>
                 <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
@@ -508,6 +547,7 @@ class Home extends React.Component {
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
+                        run={this.run.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Request donateMoney = {this.donateMoney.bind(this)}/>
                 <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
@@ -530,8 +570,33 @@ class Home extends React.Component {
                         request = {this.request.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
+                        run={this.run.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Volunteer />
+                <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
+
+            </div>
+        );
+        }
+
+        if (this.state.run === true){
+        return(
+            <div onClick={this.showNavHome} className="home">
+                <Logo   home = {this.home.bind(this)}
+                show={this.showNav.bind(this)} hide={this.hideNav.bind(this)}/>
+                <Navbar people = {this.people.bind(this)}
+                        ourMission = {this.ourMission.bind(this)}
+                        donateMoney = {this.donateMoney.bind(this)}
+                        approach = {this.approach.bind(this)}
+                        progress = {this.progress.bind(this)}
+                        story = {this.story.bind(this)}
+                        show={this.showNav.bind(this)}
+                        request = {this.request.bind(this)}
+                        volunteer = {this.volunteer.bind(this)}
+                        contact = {this.contact.bind(this)}
+                        run={this.run.bind(this)}
+                        issue = {this.issue.bind(this)}/>
+                <Run />
                 <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
             </div>
@@ -550,6 +615,7 @@ class Home extends React.Component {
                         story = {this.story.bind(this)}
                         request = {this.request.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
                         issue = {this.issue.bind(this)}/>
@@ -575,6 +641,7 @@ class Home extends React.Component {
                         volunteer = {this.volunteer.bind(this)}
                         contact = {this.contact.bind(this)}
                         show={this.showNav.bind(this)}
+                        run={this.run.bind(this)}
                         issue = {this.issue.bind(this)}/>
                 <Footer home = {this.home.bind(this)} contact = {this.contact.bind(this)}></Footer>
 
@@ -599,7 +666,7 @@ class Navbar extends React.Component {
                 {/*<span id = "arrow" onClick={this.props.show}> > </span>*/}
                 <NavElement name= "OUR WORK"   approach = {this.props.approach} issue = {this.props.issue} progress = {this.props.progress} subl = {["The Issue", "The Approach", "Progress"]}/>
                 <NavElement name= "ABOUT US"  ourMission= {this.props.ourMission} people= {this.props.people} story = {this.props.story} subl = {["Our People", "Our Mission", "Our Story"]} />
-                <NavElement name= "GET INVOLVED"  volunteer = {this.props.volunteer} request = {this.props.request} subl = {["Request A Medal", "Volunteer Opportunities"]}/>
+                <NavElement name= "GET INVOLVED"  volunteer = {this.props.volunteer} run = {this.props.run} request = {this.props.request} subl = {["Request A Medal", "Run-4-Us", "Volunteer"]}/>
             </ul>
                 <ul className="menu-click menu2">
                     <NavElement name= "CONTACT US"   contact = {this.props.contact}/>
@@ -672,7 +739,6 @@ class NavElement extends React.Component {
         if (style != "none"){
         var plus = document.getElementById("plus-c")
 
-        console.log(plus)
         if (plus.innerHTML === "+"){
             plus.innerHTML = "-";
             // var c = document.getElementById("c")
@@ -694,8 +760,9 @@ class NavElement extends React.Component {
 
                         {this.props.name} <span  className="menu-click" id= "plus-c">+</span>
                         <ul className="sub sub-c-hidden"  id="c">
+                            <li>  <Link to ="/run">{this.props.subl[1]} </Link> </li>
                             <li>  <Link to ="/request">{this.props.subl[0]} </Link> </li>
-                            <li > <Link to = "/volunteer"> {this.props.subl[1]}</Link></li>
+                            <li>  <Link to = "/volunteer">{this.props.subl[2]}</Link></li>
                         </ul>
                     </li>
                 )
@@ -879,6 +946,13 @@ class Logo extends React.Component {
                 <div id="line"></div>
                 <Link to="/">
                     <img src = "logo_green.png" alt="logo_green.jpeg"/></Link>
+                <a href="https://www.instagram.com/runners4readers/" className="instagram"></a>
+
+                <div className="fb-container">
+                <a href="https://www.facebook.com/runners4readers" className="facebook"></a>
+                {/*<div className="fb-like" data-href="https://www.facebook.com/runners4readers" data-width=""*/}
+                {/*     data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>*/}
+                </div>
                 <NavButton show={this.props.show} hide={this.props.hide} > </NavButton>
 
             </div>
@@ -1032,6 +1106,7 @@ Also we’re not picky! If you’re cleaning out your closet and found a dusty b
                 <a href="https://www.guidestar.org/profile/85-0546702" target="_blank"><img id="star" src="https://widgets.guidestar.org/gximage2?o=9890051&l=v4" /></a>
 
                 </div>
+
             </div>
 
 
@@ -1154,10 +1229,21 @@ class Progress extends React.Component{
                 <div className="bg-image-progress"></div>
                 <h1>Progress</h1>
                 <div id="underline-5" ></div>
-                <div className="progress-text">Our collection is growing! Through the generosity of race organizers, we place donation bins on race day at events to collect old medals that runners would like to gift and help promote literacy in children. By word of mouth we’ve received medals from individuals as well as running stores that have been repurposed into achievement medals for readers.
-
-                    <br></br> <br></br>
+                <div className="progress-text">
+                    Our success is driven by donations from others that believe in our work. We have received a tremendous amount of positive feedback and since our launch, Runners-4-Readers has received very generous medal donations from local organizations that include:
+                    <br/><br/>
+                    <b>The Detroit Zoological Society  </b><br/>
+                    <b>RunDetroit – independent running store </b>
+<br/><br/>
+ And Individuals:<br/><br/>
+                    <b>Denise Hagopian Walker </b><br/>
+                    <b>The Parra Family</b><br/>
+                    <b>Timothy Leszczynski</b><br/>
+                    <b>Cheynne Brown</b><br/>
+                    <b>Jim Leszczynski</b><br/><br/>
 We cannot wait to give them away! To date, we’ve contacted local schools, libraries and community outreach facilities to partner with and distribute our medals. Check back regularly to see the smiling faces of the recipients!
+
+
 </div>
             <div className="donate-banner" >
                     <div className = "button-div">
@@ -1171,6 +1257,55 @@ We cannot wait to give them away! To date, we’ve contacted local schools, libr
 
   }
 }
+
+class Run extends React.Component{
+    constructor(props){
+    super(props);
+
+    }
+
+  render() {
+        return (
+            <div className= "run-page" >
+                <h1>Run-4-Us</h1>
+                <div id="underline-5" ></div>
+
+                <div className="run-text">
+
+                    Have a race coming up? Consider running as a fundraiser for Runners-4-Readers!
+                    Click the button below to start a campaign at GivenGain.
+                                        <div className= "donate-banner-run">
+
+                    <div className = "button-div">
+                        <a href="https://www.givengain.com/c/runners4readers/"><button>GivenGain</button></a>
+                </div>
+                                        </div>
+
+
+                    <br/>
+                    Not a runner? Help support Runners-4-Readers member Elizabeth Parra reach her fundraising goal for the Detroit Free Press/TCF Bank Marathon!
+                    Use the button below to access her fundraiser.
+
+                    <div className= "donate-banner-run">
+                    <div className = "button-div">
+                        <a href="https://www.givengain.com/ap/elizabeth-parra-raising-funds-for-runners-4-readers/"><button>Donate to Fundraiser</button></a>
+                </div>
+                    </div>
+                    <br/>
+
+
+            </div>
+
+            </div>
+        )
+
+  }
+}
+
+
+
+
+
 
 class Volunteer extends React.Component{
     constructor(props){
@@ -1505,8 +1640,6 @@ function submitToAPI(e) {
         };
 
 
-       console.log(data)
-
        $.ajax({
          type: "POST",
          url : "https://5snb5nlh76.execute-api.us-east-1.amazonaws.com/test/contact-us",
@@ -1739,7 +1872,7 @@ function App() {
           <Route
               key = "home"
               exact path='/'
-              render={(props) => <Home {...props} home={true} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+              render={(props) => <Home {...props} home={true} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             {/*<IndexRoute*/}
             {/*  render={(props) => <Home {...props} home={true} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}*/}
@@ -1747,52 +1880,57 @@ function App() {
             <Route
                 key="mission"
               exact path='/mission'
-              render={(props) => <Home {...props} home={false} ourMission={true} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+              render={(props) => <Home {...props} home={false} ourMission={true} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
           <Route
               key = "people"
               exact path='/people'
-              render={(props) => <Home {...props} home={false} ourMission={false} people = {true} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {true} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key = "donate"
               exact path='/donate'
-              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {true} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {true} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key = "issue"
               exact path='/issue'
-               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={true} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={true} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key = "approach"
               exact path='/approach'
-               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={true} progress={false} story = {false} request={false} volunteer={false} contact={false} />}
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={true} progress={false} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key="progress"
               exact path='/progress'
-               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={true} story = {false} request={false} volunteer={false} contact={false} />}
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={true} story = {false} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key="story"
              exact path='/our-story'
-              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {true} request={false} volunteer={false} contact={false} />}
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {true} request={false} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key="request"
               exact path='/request'
-               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={true} volunteer={false} contact={false} />}
+               render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={true} volunteer={false} contact={false} run={false} />}
             />
             <Route
                 key ="volunteer"
              exact path='/volunteer'
-              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={true} contact={false} />}
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={true} contact={false} run={false} />}
+            />
+            <Route
+                key ="run"
+             exact path='/run'
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={false} run={true} />}
             />
             <Route
                 key="contact"
                exact path='/contact'
-              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={true} />}
+              render={(props) => <Home {...props} home={false} ourMission={false} people = {false} donate = {false} issue={false} approach={false} progress={false} story = {false} request={false} volunteer={false} contact={true} run={false} />}
             />
         </Switch>
    </Router>
